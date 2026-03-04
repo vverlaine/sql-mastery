@@ -1,10 +1,10 @@
 ---
 sidebar_position: 1
-title: Pilar 0 — Fundamentos y Cultura de Datos
+title: Fundamentos y Cultura de Datos
 slug: /pilar0
 ---
 
-# Pilar 0 — Fundamentos y Cultura de Datos
+# Fundamentos y Cultura de Datos
 
 **Programa:** Universidad Nexus  
 **Duración estimada:** 2-3 semanas  
@@ -45,4 +45,4 @@ Al finalizar este pilar, el analista debe ser capaz de:
 
 ---
 
-*Universidad Nexus — Pilar 0: Fundamentos y Cultura de Datos*
+*Universidad Nexus — Fundamentos y Cultura de Datos*
