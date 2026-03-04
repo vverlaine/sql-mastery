@@ -57,7 +57,7 @@ const config: Config = {
             },
             {
               label: 'SQL: El Lenguaje de los Datos',
-              to: '/intro',
+              to: '/sql/bienvenida',
             },
             {
               label: 'Python / Spark',

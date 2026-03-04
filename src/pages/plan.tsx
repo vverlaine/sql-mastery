@@ -22,7 +22,7 @@ const pilares = [
     color: '#2E75B6',
     objective: 'Consultar bases de datos de forma autónoma para responder preguntas de negocio reales.',
     topics: ['SELECT / FROM / WHERE', 'GROUP BY y agregaciones', 'JOINs', 'Subconsultas y CTEs', 'IA aplicada a SQL'],
-    link: '/intro',
+    link: '/sql/bienvenida',
   },
   {
     number: '02',
