@@ -52,27 +52,27 @@ const config: Config = {
           position: 'left',
           items: [
             {
-              label: '00 · Fundamentos y Cultura de Datos',
+              label: 'Fundamentos y Cultura de Datos',
               to: '/pilar0',
             },
             {
-              label: '01 · SQL: El Lenguaje de los Datos',
+              label: 'SQL: El Lenguaje de los Datos',
               to: '/intro',
             },
             {
-              label: '02 · Python / Spark',
+              label: 'Python / Spark',
               to: '/intro',
             },
             {
-              label: '03 · Databricks + VSCode',
+              label: 'Databricks + VSCode',
               to: '/intro',
             },
             {
-              label: '04 · GitHub',
+              label: 'GitHub',
               to: '/intro',
             },
             {
-              label: '05 · Power BI',
+              label: 'Power BI',
               to: '/intro',
             },
           ],

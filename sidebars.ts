@@ -8,7 +8,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Pilar 0 — Fundamentos',
+      label: 'Fundamentos y Cultura de Datos',
       collapsed: false,
       items: [
         'pilar0/index',

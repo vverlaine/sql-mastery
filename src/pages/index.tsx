@@ -12,7 +12,7 @@ export default function Home(): React.JSX.Element {
       description="Programa de Upskilling para Analistas de Datos">
       <div className="hero-container">
 
-        <div className="hero-badge">Universidad Nexus · Programa 2025</div>
+        <div className="hero-badge">Programa Experto en Datos</div>
 
         <h1 className="hero-title">
           De analista a<br />
@@ -33,7 +33,7 @@ export default function Home(): React.JSX.Element {
         </div>
 
         <div className="hero-buttons">
-          <Link className="hero-cta" to="/intro">
+          <Link className="hero-cta" to="/pilar0">
             Comenzar el programa →
           </Link>
           <Link className="hero-cta-secondary" to="/plan">
@@ -50,10 +50,6 @@ export default function Home(): React.JSX.Element {
           <div className="hero-stat">
             <div className="hero-stat-number">6</div>
             <div className="hero-stat-label">Pilares</div>
-          </div>
-          <div className="hero-stat">
-            <div className="hero-stat-number">15</div>
-            <div className="hero-stat-label">Analistas</div>
           </div>
           <div className="hero-stat">
             <div className="hero-stat-number">∞</div>
