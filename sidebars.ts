@@ -1,11 +1,8 @@
 import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
+
 const sidebars: SidebarsConfig = {
-  tutorialSidebar: [
-    {
-      type: 'doc',
-      id: 'intro',
-      label: 'Bienvenida',
-    },
+
+  pilar0Sidebar: [
     {
       type: 'category',
       label: 'Fundamentos y Cultura de Datos',
@@ -20,10 +17,13 @@ const sidebars: SidebarsConfig = {
         'pilar0/modulo6',
       ],
     },
+  ],
+
+  sqlSidebar: [
     {
       type: 'category',
       label: 'SQL — El Lenguaje de los Datos',
-      collapsed: true,
+      collapsed: false,
       items: [
         'sql/bienvenida/index',
         {
@@ -81,5 +81,7 @@ const sidebars: SidebarsConfig = {
       ],
     },
   ],
+
 };
+
 export default sidebars;
