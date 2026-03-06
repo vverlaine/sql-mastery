@@ -32,7 +32,7 @@ const pilares = [
     color: '#10b981',
     objective: 'Manipular, limpiar y transformar datos con código, superando los límites de Excel.',
     topics: ['Python básico', 'Pandas', 'Visualización', 'Introducción a Spark', 'PySpark básico'],
-    link: '/intro',
+    link: '/proximamente?curso=python-spark',
   },
   {
     number: '03',
@@ -42,7 +42,7 @@ const pilares = [
     color: '#f59e0b',
     objective: 'Dominar el entorno donde vive el trabajo de datos, con desarrollo local conectado.',
     topics: ['Navegación en Databricks', 'Delta Lake', 'Jobs y Pipelines', 'VSCode + Databricks', 'Databricks Assistant'],
-    link: '/intro',
+    link: '/proximamente?curso=databricks',
   },
   {
     number: '04',
@@ -52,7 +52,7 @@ const pilares = [
     color: '#1F3864',
     objective: 'Gestionar código con buenas prácticas y colaborar en repositorios compartidos.',
     topics: ['Control de versiones', 'Repos y ramas', 'Pull Requests', 'GitHub + VSCode', 'GitHub Copilot'],
-    link: '/intro',
+    link: '/proximamente?curso=github',
   },
   {
     number: '05',
@@ -62,7 +62,7 @@ const pilares = [
     color: '#e8b84b',
     objective: 'Transformar datos en historias visuales claras que faciliten la toma de decisiones.',
     topics: ['Modelo de datos', 'DAX básico', 'Diseño de dashboards', 'RLS', 'Power BI Service'],
-    link: '/intro',
+    link: '/proximamente?curso=power-bi',
   },
 ];
 

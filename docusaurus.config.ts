@@ -61,19 +61,19 @@ const config: Config = {
             },
             {
               label: 'Python / Spark',
-              to: '/intro',
+              to: '/proximamente?curso=python-spark',
             },
             {
               label: 'Databricks + VSCode',
-              to: '/intro',
+              to: '/proximamente?curso=databricks',
             },
             {
               label: 'GitHub',
-              to: '/intro',
+              to: '/proximamente?curso=github',
             },
             {
               label: 'Power BI',
-              to: '/intro',
+              to: '/proximamente?curso=power-bi',
             },
           ],
         },
