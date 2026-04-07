@@ -32,7 +32,7 @@ const pilares = [
     color: '#10b981',
     objective: 'Manipular, limpiar y transformar datos con código, superando los límites de Excel.',
     topics: ['Python básico', 'Pandas', 'Visualización', 'Introducción a Spark', 'PySpark básico'],
-    link: '/proximamente?curso=python-spark',
+    link: '/spark/bienvenida',
   },
   {
     number: '03',

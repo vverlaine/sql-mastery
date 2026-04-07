@@ -61,7 +61,7 @@ const config: Config = {
             },
             {
               label: 'Python / Spark',
-              to: '/proximamente?curso=python-spark',
+              to: '/spark/bienvenida',
             },
             {
               label: 'Databricks + VSCode',

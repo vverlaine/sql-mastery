@@ -82,6 +82,97 @@ const sidebars: SidebarsConfig = {
     },
   ],
 
+  sparkSidebar: [
+    {
+      type: 'category',
+      label: 'Python y Spark',
+      collapsed: false,
+      items: [
+        'spark/bienvenida/index',
+        {
+          type: 'category',
+          label: '01 · Python Básico',
+          items: [
+            'spark/python_basico/index',
+            'spark/python_basico/variables_tipos',
+            'spark/python_basico/listas_diccionarios',
+            'spark/python_basico/condicionales_bucles',
+            'spark/python_basico/funciones',
+          ],
+        },
+        {
+          type: 'category',
+          label: '02 · Introducción a Spark',
+          items: [
+            'spark/spark_intro/index',
+            'spark/spark_intro/que_es_spark',
+            'spark/spark_intro/spark_table_sql',
+            'spark/spark_intro/databricks_notebooks',
+          ],
+        },
+        {
+          type: 'category',
+          label: '03 · Selección y Filtrado',
+          items: [
+            'spark/seleccion_filtrado/index',
+            'spark/seleccion_filtrado/select',
+            'spark/seleccion_filtrado/filter_where',
+          ],
+        },
+        {
+          type: 'category',
+          label: '04 · Transformación de Columnas',
+          items: [
+            'spark/transformacion_columnas/index',
+            'spark/transformacion_columnas/withColumn',
+            'spark/transformacion_columnas/renombrar_eliminar',
+            'spark/transformacion_columnas/cast_tipos',
+          ],
+        },
+        {
+          type: 'category',
+          label: '05 · Funciones Útiles',
+          items: [
+            'spark/funciones_utiles/index',
+            'spark/funciones_utiles/when',
+            'spark/funciones_utiles/nulos_coalesce',
+            'spark/funciones_utiles/fechas',
+            'spark/funciones_utiles/strings',
+          ],
+        },
+        {
+          type: 'category',
+          label: '06 · Agregaciones',
+          items: [
+            'spark/agregaciones/index',
+            'spark/agregaciones/groupby',
+            'spark/agregaciones/agg',
+            'spark/agregaciones/orderby_patrones',
+          ],
+        },
+        {
+          type: 'category',
+          label: '07 · Joins',
+          items: [
+            'spark/joins/index',
+            'spark/joins/inner_join',
+            'spark/joins/left_right_join',
+            'spark/joins/joins_multiples',
+          ],
+        },
+        {
+          type: 'category',
+          label: '08 · Repaso y Evaluación',
+          items: [
+            'spark/repaso_evaluacion/index',
+            'spark/repaso_evaluacion/repaso_general',
+            'spark/repaso_evaluacion/evaluacion_final',
+          ],
+        },
+      ],
+    },
+  ],
+
 };
 
 export default sidebars;
