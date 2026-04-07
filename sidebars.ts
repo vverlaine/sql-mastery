@@ -173,6 +173,95 @@ const sidebars: SidebarsConfig = {
     },
   ],
 
+  databricksSidebar: [
+    {
+      type: 'category',
+      label: 'Databricks + VSCode',
+      collapsed: false,
+      items: [
+        'databricks/bienvenida/index',
+        {
+          type: 'category',
+          label: '01 · Databricks como Entorno',
+          items: [
+            'databricks/databricks_entorno/index',
+            'databricks/databricks_entorno/workspace',
+            'databricks/databricks_entorno/clusters',
+            'databricks/databricks_entorno/unity_catalog',
+          ],
+        },
+        {
+          type: 'category',
+          label: '02 · Notebooks Productivos',
+          items: [
+            'databricks/notebooks_productivos/index',
+            'databricks/notebooks_productivos/estructura',
+            'databricks/notebooks_productivos/widgets_parametros',
+            'databricks/notebooks_productivos/jobs_workflows',
+          ],
+        },
+        {
+          type: 'category',
+          label: '03 · VSCode Setup',
+          items: [
+            'databricks/vscode_setup/index',
+            'databricks/vscode_setup/instalacion',
+            'databricks/vscode_setup/extensiones',
+          ],
+        },
+        {
+          type: 'category',
+          label: '04 · Conectar VSCode con Databricks',
+          items: [
+            'databricks/conectar_vscode_databricks/index',
+            'databricks/conectar_vscode_databricks/extension_config',
+            'databricks/conectar_vscode_databricks/databricks_connect',
+            'databricks/conectar_vscode_databricks/sync_archivos',
+          ],
+        },
+        {
+          type: 'category',
+          label: '05 · Desarrollo Local + Remoto',
+          items: [
+            'databricks/desarrollo_local_remoto/index',
+            'databricks/desarrollo_local_remoto/workflow_profesional',
+            'databricks/desarrollo_local_remoto/refactor_a_py',
+            'databricks/desarrollo_local_remoto/debugging',
+          ],
+        },
+        {
+          type: 'category',
+          label: '06 · Organización de Proyectos',
+          items: [
+            'databricks/organizacion_proyectos/index',
+            'databricks/organizacion_proyectos/estructura_carpetas',
+            'databricks/organizacion_proyectos/modulos_reutilizables',
+            'databricks/organizacion_proyectos/configuracion_secrets',
+          ],
+        },
+        {
+          type: 'category',
+          label: '07 · Buenas Prácticas',
+          items: [
+            'databricks/buenas_practicas/index',
+            'databricks/buenas_practicas/linting_formatting',
+            'databricks/buenas_practicas/atajos_productividad',
+            'databricks/buenas_practicas/buenas_practicas_generales',
+          ],
+        },
+        {
+          type: 'category',
+          label: '08 · Repaso y Evaluación',
+          items: [
+            'databricks/repaso_evaluacion/index',
+            'databricks/repaso_evaluacion/repaso_general',
+            'databricks/repaso_evaluacion/evaluacion_final',
+          ],
+        },
+      ],
+    },
+  ],
+
 };
 
 export default sidebars;

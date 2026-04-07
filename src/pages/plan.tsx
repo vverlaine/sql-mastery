@@ -42,7 +42,7 @@ const pilares = [
     color: '#f59e0b',
     objective: 'Dominar el entorno donde vive el trabajo de datos, con desarrollo local conectado.',
     topics: ['Navegación en Databricks', 'Delta Lake', 'Jobs y Pipelines', 'VSCode + Databricks', 'Databricks Assistant'],
-    link: '/proximamente?curso=databricks',
+    link: '/databricks/bienvenida',
   },
   {
     number: '04',

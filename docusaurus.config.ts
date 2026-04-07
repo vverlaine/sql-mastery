@@ -65,7 +65,7 @@ const config: Config = {
             },
             {
               label: 'Databricks + VSCode',
-              to: '/proximamente?curso=databricks',
+              to: '/databricks/bienvenida',
             },
             {
               label: 'GitHub',
