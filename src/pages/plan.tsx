@@ -52,7 +52,7 @@ const pilares = [
     color: '#1F3864',
     objective: 'Gestionar código con buenas prácticas y colaborar en repositorios compartidos.',
     topics: ['Control de versiones', 'Repos y ramas', 'Pull Requests', 'GitHub + VSCode', 'GitHub Copilot'],
-    link: '/proximamente?curso=github',
+    link: '/github/bienvenida',
   },
   {
     number: '05',

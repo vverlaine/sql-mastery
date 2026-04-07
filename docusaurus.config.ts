@@ -69,7 +69,7 @@ const config: Config = {
             },
             {
               label: 'GitHub',
-              to: '/proximamente?curso=github',
+              to: '/github/bienvenida',
             },
             {
               label: 'Power BI',

@@ -262,6 +262,94 @@ const sidebars: SidebarsConfig = {
     },
   ],
 
+  githubSidebar: [
+    {
+      type: 'category',
+      label: 'GitHub',
+      collapsed: false,
+      items: [
+        'github/bienvenida/index',
+        {
+          type: 'category',
+          label: '01 · ¿Por qué Git?',
+          items: [
+            'github/porque_git/index',
+            'github/porque_git/problema_que_resuelve',
+            'github/porque_git/conceptos_fundamentales',
+            'github/porque_git/instalacion_configuracion',
+          ],
+        },
+        {
+          type: 'category',
+          label: '02 · Git Local',
+          items: [
+            'github/git_local/index',
+            'github/git_local/primer_repositorio',
+            'github/git_local/gitignore',
+            'github/git_local/comandos_esenciales',
+          ],
+        },
+        {
+          type: 'category',
+          label: '03 · Branches y Merge',
+          items: [
+            'github/branches_merge/index',
+            'github/branches_merge/trabajando_con_branches',
+            'github/branches_merge/merge_y_conflictos',
+          ],
+        },
+        {
+          type: 'category',
+          label: '04 · GitHub Remoto',
+          items: [
+            'github/github_remoto/index',
+            'github/github_remoto/repos_remotos_clone',
+            'github/github_remoto/push_pull_fetch',
+          ],
+        },
+        {
+          type: 'category',
+          label: '05 · Pull Requests',
+          items: [
+            'github/pull_requests/index',
+            'github/pull_requests/crear_pull_request',
+            'github/pull_requests/code_reviews',
+            'github/pull_requests/templates_workflows',
+          ],
+        },
+        {
+          type: 'category',
+          label: '06 · Flujo Diario',
+          items: [
+            'github/flujo_diario/index',
+            'github/flujo_diario/feature_branch_workflow',
+            'github/flujo_diario/conflictos_avanzados',
+            'github/flujo_diario/recuperacion',
+          ],
+        },
+        {
+          type: 'category',
+          label: '07 · Databricks + Repos',
+          items: [
+            'github/databricks_repos/index',
+            'github/databricks_repos/conectar_databricks_github',
+            'github/databricks_repos/workflow_integrado',
+            'github/databricks_repos/cicd_github_actions',
+          ],
+        },
+        {
+          type: 'category',
+          label: '08 · Repaso y Evaluación',
+          items: [
+            'github/repaso_evaluacion/index',
+            'github/repaso_evaluacion/repaso_general',
+            'github/repaso_evaluacion/evaluacion_final',
+          ],
+        },
+      ],
+    },
+  ],
+
 };
 
 export default sidebars;
