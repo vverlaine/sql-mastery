@@ -1,7 +1,6 @@
 ---
 sidebar_position: 1
 title: Bienvenido al Curso de Python y Spark
-slug: /pilar3
 ---
 
 # Bienvenido al Curso de Python y Spark
