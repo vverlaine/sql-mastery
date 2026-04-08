@@ -62,7 +62,7 @@ const pilares = [
     color: '#e8b84b',
     objective: 'Transformar datos en historias visuales claras que faciliten la toma de decisiones.',
     topics: ['Modelo de datos', 'DAX básico', 'Diseño de dashboards', 'RLS', 'Power BI Service'],
-    link: '/proximamente?curso=power-bi',
+    link: '/powerbi/bienvenida',
   },
 ];
 

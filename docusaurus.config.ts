@@ -73,7 +73,7 @@ const config: Config = {
             },
             {
               label: 'Power BI',
-              to: '/proximamente?curso=power-bi',
+              to: '/powerbi/bienvenida',
             },
           ],
         },

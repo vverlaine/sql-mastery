@@ -350,6 +350,89 @@ const sidebars: SidebarsConfig = {
     },
   ],
 
+  powerbiSidebar: [
+    {
+      type: 'category',
+      label: 'Power BI',
+      collapsed: false,
+      items: [
+        'powerbi/bienvenida/index',
+        {
+          type: 'category',
+          label: '01 · Fundamentos',
+          items: [
+            'powerbi/fundamentos/index',
+            'powerbi/fundamentos/que_es_power_bi',
+            'powerbi/fundamentos/instalacion_primer_recorrido',
+          ],
+        },
+        {
+          type: 'category',
+          label: '02 · Conectar con Databricks',
+          items: [
+            'powerbi/conectar_databricks/index',
+            'powerbi/conectar_databricks/configurar_conexion',
+            'powerbi/conectar_databricks/import_vs_directquery',
+          ],
+        },
+        {
+          type: 'category',
+          label: '03 · Modelado',
+          items: [
+            'powerbi/modelado/index',
+            'powerbi/modelado/modelo_estrella',
+            'powerbi/modelado/power_query',
+          ],
+        },
+        {
+          type: 'category',
+          label: '04 · DAX',
+          items: [
+            'powerbi/dax/index',
+            'powerbi/dax/fundamentos_dax',
+            'powerbi/dax/time_intelligence',
+          ],
+        },
+        {
+          type: 'category',
+          label: '05 · Visualizaciones',
+          items: [
+            'powerbi/visualizaciones/index',
+            'powerbi/visualizaciones/elegir_visual_correcto',
+            'powerbi/visualizaciones/interactividad',
+          ],
+        },
+        {
+          type: 'category',
+          label: '06 · Diseño UX',
+          items: [
+            'powerbi/diseno_ux/index',
+            'powerbi/diseno_ux/principios_ux_dashboards',
+            'powerbi/diseno_ux/plantilla_ejecutiva',
+          ],
+        },
+        {
+          type: 'category',
+          label: '07 · Publicación y Service',
+          items: [
+            'powerbi/publicacion_service/index',
+            'powerbi/publicacion_service/publicar_compartir',
+            'powerbi/publicacion_service/refresh_programado',
+          ],
+        },
+        {
+          type: 'category',
+          label: '08 · Repaso y Evaluación',
+          items: [
+            'powerbi/repaso_evaluacion/index',
+            'powerbi/repaso_evaluacion/repaso_general',
+            'powerbi/repaso_evaluacion/evaluacion_final',
+          ],
+        },
+      ],
+    },
+  ],
+
 };
 
 export default sidebars;
