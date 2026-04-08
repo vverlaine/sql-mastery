@@ -251,8 +251,8 @@ tbody td {
 }
 
 .admonition-note {
-  border-left-color: #4088D2;
-  background: #f0f6ff;
+  border-left-color: #2563eb;
+  background: #eff6ff;
 }
 
 .admonition-warning {
@@ -266,7 +266,7 @@ tbody td {
 }
 
 [data-theme='dark'] .admonition-note {
-  background: rgba(64,136,210,0.1);
+  background: rgba(96,165,250,0.1);
 }
 
 [data-theme='dark'] .admonition-warning {
@@ -561,4 +561,58 @@ tbody td {
 [data-theme='light'] .dropdown__link:hover {
   background: #f8fafc;
   color: var(--nexus-heading) !important;
+}
+
+/* ── BREADCRUMBS ── */
+.breadcrumbs__link {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--nexus-text-muted);
+  transition: color 0.15s;
+}
+
+.breadcrumbs__link:hover {
+  color: var(--nexus-heading);
+}
+
+.breadcrumbs__item--active .breadcrumbs__link {
+  color: var(--nexus-heading);
+  font-weight: 500;
+}
+
+/* ── TOC (tabla de contenidos) ── */
+.table-of-contents__link {
+  font-size: 0.82rem;
+  font-weight: 400;
+  color: var(--nexus-text-muted);
+  transition: color 0.15s;
+}
+
+.table-of-contents__link:hover {
+  color: var(--nexus-heading);
+}
+
+.table-of-contents__link--active {
+  color: var(--nexus-blue) !important;
+  font-weight: 500;
+}
+
+/* ── ADMONITIONS (light refinements) ── */
+[data-theme='light'] .admonition-note {
+  border-left-color: #2563eb;
+  background: #eff6ff;
+}
+
+/* ── GLOBAL TRANSITIONS ── */
+a {
+  transition: color 0.15s;
+}
+
+/* ── FOOTER ── */
+.footer--dark {
+  background: #060d1f;
+}
+
+[data-theme='light'] .footer--dark {
+  background: #0a1535;
 }
