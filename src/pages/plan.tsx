@@ -100,12 +100,12 @@ export default function Plan(): React.JSX.Element {
                 <p className={styles.cardObjective}>{pilar.objective}</p>
                 <div className={styles.topics}>
                   {pilar.topics.map((topic, i) => (
-                    <span key={i} className={styles.topic} style={{borderColor: `${pilar.color}30`, color: pilar.color, background: `${pilar.color}08`}}>
+                    <span key={i} className={styles.topic}>
                       {topic}
                     </span>
                   ))}
                 </div>
-                <Link to={pilar.link} className={styles.cardCta} style={{borderColor: pilar.color, color: pilar.color}}>
+                <Link to={pilar.link} className={styles.cardCta}>
                   Explorar →
                 </Link>
               </div>

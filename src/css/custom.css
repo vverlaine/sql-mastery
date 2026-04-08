@@ -338,28 +338,26 @@ table {
   font-size: 0.875rem;
   font-weight: 400;
   border-collapse: collapse;
-  width: auto;
-  max-width: 680px;
-  margin: 1.5rem auto;
+  width: 100%;
+  margin: 1.5em 0;
   border: none !important;
 }
 
 thead tr {
-  background: transparent !important;
+  background: var(--nexus-bg-subtle, #f3f1ec) !important;
   border-top: none !important;
-  border-bottom: 2px solid var(--nexus-border) !important;
+  border-bottom: 1px solid var(--nexus-border-strong, #ddd8cc) !important;
 }
 
 thead th {
   font-weight: 600;
-  font-size: 0.75rem;
-  letter-spacing: 0.08em;
+  font-size: 11px;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  padding: 8px 24px 8px 0;
-  color: var(--nexus-heading) !important;
-  text-align: center;
+  padding: 12px 16px;
+  color: var(--nexus-text-muted) !important;
+  text-align: left;
   border: none !important;
-  background: transparent !important;
 }
 
 tbody tr {
@@ -371,9 +369,13 @@ tbody tr:nth-child(even) {
   background: transparent !important;
 }
 
+tbody tr:hover {
+  background: var(--nexus-bg-subtle, #f3f1ec) !important;
+}
+
 tbody td {
-  padding: 10px 24px 10px 0;
-  color: var(--nexus-text);
+  padding: 14px 16px;
+  color: var(--ifm-font-color-base);
   font-weight: 400;
   border: none !important;
   background: transparent !important;
@@ -496,14 +498,28 @@ tbody td {
 
 /* ── PAGINACIÓN ── */
 .pagination-nav__link {
-  border-radius: 10px;
+  background: var(--nexus-bg-elevated, #ffffff);
+  border-radius: 12px;
   border: 1px solid var(--nexus-border);
+  padding: 16px 20px;
   transition: all 0.2s;
 }
 
 .pagination-nav__link:hover {
-  border-color: var(--nexus-blue);
-  background: #eff6ff;
+  border-color: var(--nexus-accent-border);
+  box-shadow: var(--nexus-shadow-md);
+}
+
+.pagination-nav__sublabel {
+  color: var(--nexus-text-muted);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.pagination-nav__label {
+  color: var(--nexus-text-strong);
+  font-weight: 500;
 }
 
 [data-theme='dark'] .pagination-nav__link {
