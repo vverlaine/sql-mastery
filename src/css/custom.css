@@ -335,11 +335,23 @@ tbody td {
   pointer-events: none;
 }
 
+[data-theme='light'] .hero-container {
+  background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 50%, #f8fafc 100%);
+}
+
+[data-theme='light'] .hero-container::before {
+  background: radial-gradient(circle, rgba(37,99,235,0.06) 0%, transparent 70%);
+}
+
+[data-theme='light'] .hero-container::after {
+  background: radial-gradient(circle, rgba(59,130,246,0.04) 0%, transparent 70%);
+}
+
 .hero-badge {
   display: inline-block;
   background: rgba(20,111,243,0.12);
   border: 1px solid rgba(20,111,243,0.3);
-  color: #4088D2;
+  color: #60a5fa;
   font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.12em;
@@ -347,6 +359,12 @@ tbody td {
   padding: 6px 18px;
   border-radius: 100px;
   margin-bottom: 32px;
+}
+
+[data-theme='light'] .hero-badge {
+  background: #eff6ff;
+  border-color: #bfdbfe;
+  color: #2563eb;
 }
 
 .hero-title {
@@ -360,7 +378,18 @@ tbody td {
 }
 
 .hero-title span {
-  background: linear-gradient(90deg, #4088D2, #5070FF);
+  background: linear-gradient(90deg, #60a5fa, #93c5fd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+[data-theme='light'] .hero-title {
+  color: #0a1535;
+}
+
+[data-theme='light'] .hero-title span {
+  background: linear-gradient(90deg, #2563eb, #3b82f6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -369,17 +398,21 @@ tbody td {
 .hero-subtitle {
   font-size: 1.05rem;
   color: rgba(255,255,255,0.45);
-  font-weight: 300;
+  font-weight: 400;
   max-width: 520px;
   line-height: 1.75;
   margin-bottom: 48px;
+}
+
+[data-theme='light'] .hero-subtitle {
+  color: #64748b;
 }
 
 .hero-cta {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: #146FF3;
+  background: #2563eb;
   color: #ffffff !important;
   font-size: 0.88rem;
   font-weight: 600;
@@ -391,9 +424,9 @@ tbody td {
 }
 
 .hero-cta:hover {
-  background: #4088D2;
+  background: #1d4ed8;
   transform: translateY(-1px);
-  box-shadow: 0 8px 30px rgba(20,111,243,0.35);
+  box-shadow: 0 8px 30px rgba(37,99,235,0.35);
 }
 
 .hero-cta-secondary {
@@ -414,6 +447,14 @@ tbody td {
   color: #ffffff !important;
 }
 
+[data-theme='light'] .hero-cta-secondary {
+  color: #64748b !important;
+}
+
+[data-theme='light'] .hero-cta-secondary:hover {
+  color: #0a1535 !important;
+}
+
 .hero-buttons {
   display: flex;
   align-items: center;
@@ -430,6 +471,10 @@ tbody td {
   padding-top: 40px;
 }
 
+[data-theme='light'] .hero-stats {
+  border-top-color: #e2e8f0;
+}
+
 .hero-stat {
   text-align: center;
 }
@@ -441,12 +486,20 @@ tbody td {
   letter-spacing: -0.02em;
 }
 
+[data-theme='light'] .hero-stat-number {
+  color: #0a1535;
+}
+
 .hero-stat-label {
   font-size: 0.72rem;
   color: rgba(255,255,255,0.35);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-top: 4px;
+}
+
+[data-theme='light'] .hero-stat-label {
+  color: #94a3b8;
 }
 
 .hero-pills {
@@ -466,6 +519,12 @@ tbody td {
   border-radius: 100px;
   font-weight: 400;
   letter-spacing: 0.02em;
+}
+
+[data-theme='light'] .hero-pill {
+  background: #ffffff;
+  border-color: #e2e8f0;
+  color: #64748b;
 }
 
 /* ── TOGGLE TEMA ── */
