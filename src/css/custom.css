@@ -1,40 +1,43 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
-  /* === Fondos: off-white cálidos, NO azulados === */
+  /* === Fondos: cálido con toque azul lavanda === */
   --ifm-background-color: #fbfaf7;
   --nexus-bg-elevated: #ffffff;
-  --nexus-bg-sidebar: #f6f4ef;
+  --nexus-bg-sidebar: #f0f4fc;
   --nexus-bg-toc: #fbfaf7;
-  --nexus-bg-subtle: #f3f1ec;
-  --nexus-bg-code-inline: #f1ede4;
+  --nexus-bg-subtle: #f0f4fc;
+  --nexus-bg-code-inline: #edf1fb;
 
-  /* === Texto: grises cálidos, NO negros === */
+  /* === Texto: cálido, headings azul CBC === */
   --ifm-font-color-base: #2a2d35;
-  --nexus-text-strong: #1a1c22;
+  --nexus-text-strong: #0345AA;
   --nexus-text-secondary: #5a5f6b;
   --nexus-text-muted: #8a8f9b;
 
-  /* === Acentos: azul CBC desaturado === */
-  --ifm-color-primary: #1a4fa3;
-  --ifm-color-primary-dark: #143d80;
-  --ifm-color-primary-darker: #103268;
-  --ifm-color-primary-darkest: #0c2550;
-  --ifm-color-primary-light: #2563c9;
-  --ifm-color-primary-lighter: #3b7ae0;
-  --ifm-color-primary-lightest: #6b9bff;
-  --nexus-accent: #2563c9;
-  --nexus-accent-soft: rgba(37, 99, 201, 0.08);
-  --nexus-accent-border: rgba(37, 99, 201, 0.2);
+  /* === Acentos: paleta CBC === */
+  --ifm-color-primary: #0345AA;
+  --ifm-color-primary-dark: #023892;
+  --ifm-color-primary-darker: #022e78;
+  --ifm-color-primary-darkest: #01224f;
+  --ifm-color-primary-light: #146FF3;
+  --ifm-color-primary-lighter: #4088D2;
+  --ifm-color-primary-lightest: #6ba3e0;
+  --nexus-accent: #146FF3;
+  --nexus-accent-soft: rgba(3, 69, 170, 0.08);
+  --nexus-accent-border: rgba(3, 69, 170, 0.2);
 
-  /* === Bordes: cálidos === */
-  --nexus-border: #ebe7dd;
-  --nexus-border-strong: #ddd8cc;
+  /* === Navbar azul === */
+  --nexus-nav-bg: linear-gradient(135deg, #0345AA 0%, #146FF3 100%);
 
-  /* === Sombras: cálidas === */
-  --nexus-shadow-sm: 0 1px 2px rgba(60, 50, 30, 0.04);
-  --nexus-shadow-md: 0 2px 8px rgba(60, 50, 30, 0.06), 0 1px 2px rgba(60, 50, 30, 0.04);
-  --nexus-shadow-lg: 0 8px 24px rgba(60, 50, 30, 0.08), 0 2px 6px rgba(60, 50, 30, 0.04);
+  /* === Bordes: azul suave === */
+  --nexus-border: #c5d3ee;
+  --nexus-border-strong: #b0c0de;
+
+  /* === Sombras: azuladas === */
+  --nexus-shadow-sm: 0 1px 2px rgba(3, 69, 170, 0.06);
+  --nexus-shadow-md: 0 2px 8px rgba(3, 69, 170, 0.08), 0 1px 2px rgba(3, 69, 170, 0.04);
+  --nexus-shadow-lg: 0 8px 24px rgba(3, 69, 170, 0.1), 0 2px 6px rgba(3, 69, 170, 0.06);
 
   /* === Tipografía === */
   --ifm-font-family-base: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -44,12 +47,15 @@
   --ifm-code-font-size: 90%;
   --ifm-navbar-height: 60px;
 
-  /* === Colores de marca (compartidos) === */
+  /* === Colores de marca CBC === */
   --nexus-gold: #F7AD1A;
   --nexus-orange: #FFA103;
   --nexus-green: #25AF60;
   --nexus-red: #DE5533;
   --nexus-gray: #6B7280;
+  --nexus-cbc-deep: #0345AA;
+  --nexus-cbc-bright: #146FF3;
+  --nexus-cbc-medium: #4088D2;
 }
 
 [data-theme='dark'] {
@@ -95,9 +101,9 @@
 }
 
 [data-theme='light'] .navbar {
-  background: var(--nexus-bg-elevated);
-  border-bottom: 1px solid var(--nexus-border);
-  box-shadow: var(--nexus-shadow-sm);
+  background: linear-gradient(135deg, #0345AA 0%, #146FF3 100%);
+  border-bottom: none;
+  box-shadow: 0 2px 12px rgba(3, 69, 170, 0.3);
 }
 
 .navbar__title {
@@ -108,7 +114,7 @@
 }
 
 [data-theme='light'] .navbar__title {
-  color: var(--nexus-text-strong);
+  color: #ffffff;
 }
 
 .navbar__link {
@@ -127,12 +133,17 @@
 }
 
 [data-theme='light'] .navbar__link {
-  color: var(--nexus-text-muted) !important;
+  color: rgba(255, 255, 255, 0.75) !important;
 }
 
-[data-theme='light'] .navbar__link:hover,
+[data-theme='light'] .navbar__link:hover {
+  color: #ffffff !important;
+}
+
 [data-theme='light'] .navbar__link--active {
-  color: var(--nexus-text-strong) !important;
+  color: #ffffff !important;
+  border-bottom: 2px solid #F7AD1A;
+  padding-bottom: 4px;
 }
 
 /* ── SIDEBAR ── */
@@ -776,38 +787,46 @@ tbody td {
 
 /* ── TOGGLE TEMA ── */
 [data-theme='light'] .navbar__items--right .clean-btn {
-  color: var(--nexus-text-muted) !important;
+  color: #ffffff !important;
 }
 
 [data-theme='light'] .navbar__items--right .clean-btn svg {
-  fill: var(--nexus-text-muted) !important;
-  stroke: var(--nexus-text-muted) !important;
+  fill: #ffffff !important;
+  stroke: #ffffff !important;
 }
 
 [data-theme='light'] [class*="colorModeToggle"] button {
-  color: var(--nexus-text-muted) !important;
+  color: #ffffff !important;
 }
 
 [data-theme='light'] [class*="colorModeToggle"] svg {
-  color: var(--nexus-text-muted) !important;
-  fill: var(--nexus-text-muted) !important;
+  color: #ffffff !important;
+  fill: #ffffff !important;
 }
 
 /* ── DROPDOWN (light) ── */
 [data-theme='light'] .dropdown__menu {
   background: #ffffff;
   border: 1px solid var(--nexus-border);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 16px rgba(3, 69, 170, 0.12);
   border-radius: 8px;
 }
 
 [data-theme='light'] .dropdown__link {
-  color: var(--nexus-text) !important;
+  color: var(--ifm-font-color-base) !important;
 }
 
 [data-theme='light'] .dropdown__link:hover {
   background: var(--nexus-bg-subtle);
-  color: var(--nexus-text-strong) !important;
+  color: var(--nexus-cbc-deep) !important;
+}
+
+[data-theme='light'] .navbar__link.dropdown__link {
+  color: var(--ifm-font-color-base) !important;
+}
+
+[data-theme='light'] .navbar__link.dropdown__link:hover {
+  color: var(--nexus-cbc-deep) !important;
 }
 
 /* ── BREADCRUMBS ── */
