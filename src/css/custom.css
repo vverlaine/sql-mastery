@@ -337,9 +337,9 @@
 }
 
 code {
-  background: var(--nexus-bg-code-inline, #f1ede4);
-  color: #8b4513;
-  border: 1px solid var(--nexus-border, #ebe7dd);
+  background: var(--nexus-bg-code-inline, #edf1fb);
+  color: var(--nexus-cbc-deep, #0345AA);
+  border: 1px solid rgba(3, 69, 170, 0.15);
   border-radius: 5px;
   padding: 1px 6px;
   font-size: 0.875em;
@@ -373,9 +373,9 @@ table {
 }
 
 thead tr {
-  background: var(--nexus-bg-subtle, #f3f1ec) !important;
+  background: linear-gradient(135deg, #0345AA 0%, #146FF3 100%) !important;
   border-top: none !important;
-  border-bottom: 1px solid var(--nexus-border-strong, #ddd8cc) !important;
+  border-bottom: none !important;
 }
 
 thead th {
@@ -384,9 +384,17 @@ thead th {
   letter-spacing: 0.06em;
   text-transform: uppercase;
   padding: 12px 16px;
-  color: var(--nexus-text-muted) !important;
+  color: #ffffff !important;
   text-align: left;
   border: none !important;
+}
+
+thead th:first-child {
+  border-radius: 8px 0 0 0;
+}
+
+thead th:last-child {
+  border-radius: 0 8px 0 0;
 }
 
 tbody tr {
@@ -440,18 +448,23 @@ tbody td {
 }
 
 .admonition-note {
-  border-left-color: var(--ifm-color-primary, #1a4fa3);
-  background: rgba(37, 99, 201, 0.06);
+  border-left-color: var(--nexus-cbc-bright, #146FF3);
+  background: rgba(20, 111, 243, 0.06);
 }
 
 .admonition-warning {
-  border-left-color: #c68a00;
-  background: rgba(198, 138, 0, 0.06);
+  border-left-color: var(--nexus-gold, #F7AD1A);
+  background: rgba(247, 173, 26, 0.06);
 }
 
 .admonition-tip {
-  border-left-color: #1d8c4e;
-  background: rgba(29, 140, 78, 0.06);
+  border-left-color: var(--nexus-green, #25AF60);
+  background: rgba(37, 175, 96, 0.06);
+}
+
+.admonition-danger {
+  border-left-color: var(--nexus-red, #DE5533);
+  background: rgba(222, 85, 51, 0.06);
 }
 
 [data-theme='dark'] .admonition {
@@ -535,8 +548,8 @@ tbody td {
 }
 
 .pagination-nav__link:hover {
-  border-color: var(--nexus-accent-border);
-  box-shadow: var(--nexus-shadow-md);
+  border-color: rgba(3, 69, 170, 0.3);
+  box-shadow: 0 4px 16px rgba(3, 69, 170, 0.1);
 }
 
 .pagination-nav__sublabel {
@@ -547,7 +560,7 @@ tbody td {
 }
 
 .pagination-nav__label {
-  color: var(--nexus-text-strong);
+  color: var(--nexus-cbc-deep, #0345AA);
   font-weight: 500;
 }
 
