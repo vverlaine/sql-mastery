@@ -30,9 +30,9 @@
 }
 
 [data-theme='dark'] .badge {
-  background: rgba(96,165,250,0.1);
-  border-color: rgba(96,165,250,0.25);
-  color: #60a5fa;
+  background: var(--nexus-accent-soft, rgba(107,155,255,0.12));
+  border-color: var(--nexus-accent-border, rgba(107,155,255,0.25));
+  color: var(--nexus-accent, #6b9bff);
 }
 
 .title {
@@ -91,13 +91,16 @@
 }
 
 [data-theme='dark'] .card {
-  background: rgba(255,255,255,0.04);
+  background: var(--nexus-bg-elevated, #0a1535);
+  border: 1px solid var(--nexus-border, rgba(255,255,255,0.08));
   box-shadow: 0 1px 3px rgba(0,0,0,0.3);
 }
 
 [data-theme='dark'] .card:hover {
-  background: rgba(255,255,255,0.06);
-  box-shadow: 0 12px 32px rgba(0,0,0,0.4);
+  background: var(--nexus-bg-elevated-2, #0f1c42);
+  border-color: var(--nexus-accent-border, rgba(107,155,255,0.25));
+  transform: translateY(-2px);
+  box-shadow: var(--nexus-shadow-lg, 0 16px 48px rgba(0,0,0,0.5));
 }
 
 .cardStripe {
@@ -105,11 +108,32 @@
   width: 100%;
 }
 
+/* En dark mode, reemplazar stripe por gradiente sutil */
+[data-theme='dark'] .cardStripe {
+  display: none;
+}
+
+.cardGlow {
+  display: none;
+}
+
+[data-theme='dark'] .cardGlow {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  pointer-events: none;
+  border-radius: 16px 16px 0 0;
+}
+
 .cardBody {
   padding: 28px 28px 24px;
   flex: 1;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .cardTop {
@@ -119,12 +143,27 @@
   margin-bottom: 16px;
 }
 
+/* Número en light mode */
 .cardNumber {
   font-size: 2.5rem;
   font-weight: 700;
   line-height: 1;
   opacity: 0.12;
   letter-spacing: -0.02em;
+}
+
+/* Número en dark mode: marca de agua decorativa */
+[data-theme='dark'] .cardNumber {
+  position: absolute;
+  top: 8px;
+  right: 20px;
+  font-size: 88px;
+  font-weight: 800;
+  color: rgba(255,255,255,0.04) !important;
+  opacity: 1;
+  line-height: 1;
+  pointer-events: none;
+  z-index: 0;
 }
 
 .cardPeriod {
@@ -134,6 +173,12 @@
   text-transform: uppercase;
   text-align: right;
   line-height: 1.5;
+}
+
+/* En dark, el period va a la izquierda (arriba) ya que el número es watermark */
+[data-theme='dark'] .cardPeriod {
+  text-align: left;
+  color: var(--nexus-text-muted, #6b7894) !important;
 }
 
 .cardTitle {
@@ -177,6 +222,18 @@
   letter-spacing: 0.02em;
 }
 
+/* Pills en dark: neutros, sin colores saturados */
+[data-theme='dark'] .topic {
+  background: rgba(255,255,255,0.05) !important;
+  color: var(--nexus-text-secondary, #a8b2c8) !important;
+  border-color: rgba(255,255,255,0.08) !important;
+}
+
+[data-theme='dark'] .topic:hover {
+  background: rgba(255,255,255,0.08) !important;
+  color: #ffffff !important;
+}
+
 .cardCta {
   display: inline-flex;
   align-items: center;
@@ -196,6 +253,21 @@
 .cardCta:hover {
   opacity: 0.85;
   transform: translateX(2px);
+}
+
+/* CTA en dark: link inline, sin borde */
+[data-theme='dark'] .cardCta {
+  border: none !important;
+  padding: 0;
+  color: var(--nexus-accent, #6b9bff) !important;
+  background: transparent !important;
+  border-radius: 0;
+  font-weight: 500;
+}
+
+[data-theme='dark'] .cardCta:hover {
+  opacity: 1;
+  color: #ffffff !important;
 }
 
 /* CTA Final */
@@ -255,9 +327,12 @@
 }
 
 [data-theme='dark'] .ctaButton {
-  background: #3b82f6;
+  background: rgba(107, 155, 255, 0.15);
+  border: 1px solid var(--nexus-accent-border, rgba(107,155,255,0.25));
+  color: var(--nexus-accent, #6b9bff) !important;
 }
 
 [data-theme='dark'] .ctaButton:hover {
-  background: #60a5fa;
+  background: rgba(107, 155, 255, 0.25);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }

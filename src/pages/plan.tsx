@@ -84,8 +84,9 @@ export default function Plan(): React.JSX.Element {
         {/* Grid de tarjetas */}
         <div className={styles.grid}>
           {pilares.map((pilar, index) => (
-            <div key={index} className={styles.card}>
+            <div key={index} className={styles.card} style={{position: 'relative'}}>
               <div className={styles.cardStripe} style={{background: pilar.color}} />
+              <div className={styles.cardGlow} style={{background: `linear-gradient(180deg, ${pilar.color}12 0%, transparent 100%)`}} />
               <div className={styles.cardBody}>
                 <div className={styles.cardTop}>
                   <div className={styles.cardNumber} style={{color: pilar.color}}>
