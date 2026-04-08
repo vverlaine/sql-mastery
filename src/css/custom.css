@@ -33,15 +33,35 @@
 }
 
 [data-theme='dark'] {
-  --ifm-color-primary: #60a5fa;
+  /* Fondos */
   --ifm-background-color: #060d1f;
   --ifm-navbar-background-color: #060d1f;
   --ifm-sidebar-background: #080f24;
-  --nexus-heading: #e2e8f0;
+  --nexus-bg-elevated: #0a1535;
+  --nexus-bg-elevated-2: #0f1c42;
+  --nexus-bg-subtle: #0b142c;
+
+  /* Texto */
+  --ifm-font-color-base: #e6eaf2;
+  --nexus-heading: #e6eaf2;
   --nexus-text: rgba(255,255,255,0.82);
-  --nexus-text-muted: rgba(255,255,255,0.45);
-  --nexus-border: rgba(255,255,255,0.08);
+  --nexus-text-secondary: #a8b2c8;
+  --nexus-text-muted: #6b7894;
+
+  /* Acentos (desaturados, no neón) */
+  --ifm-color-primary: #5b8def;
+  --nexus-accent: #6b9bff;
+  --nexus-accent-soft: rgba(107, 155, 255, 0.12);
+  --nexus-accent-border: rgba(107, 155, 255, 0.25);
+
+  /* Bordes */
+  --nexus-border: rgba(255, 255, 255, 0.08);
+  --nexus-border-strong: rgba(255, 255, 255, 0.14);
   --nexus-surface: #080f24;
+
+  /* Sombras */
+  --nexus-shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
+  --nexus-shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(107, 155, 255, 0.1);
 }
 
 /* ── NAVBAR ── */
