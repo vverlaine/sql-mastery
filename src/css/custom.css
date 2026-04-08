@@ -138,7 +138,7 @@
 /* ── SIDEBAR ── */
 .theme-doc-sidebar-container {
   border-right: 1px solid var(--nexus-border);
-  background: var(--nexus-surface);
+  background: var(--nexus-bg-sidebar);
 }
 
 [data-theme='dark'] .theme-doc-sidebar-container {
@@ -147,23 +147,26 @@
 }
 
 .menu__link {
-  font-size: 0.85rem;
+  font-size: 14px;
   font-weight: 400;
-  color: var(--nexus-text-muted);
+  color: var(--nexus-text-secondary);
   border-radius: 6px;
-  padding: 6px 12px;
-  transition: all 0.15s;
+  padding: 8px 12px;
+  transition: all 200ms ease;
 }
 
 .menu__link:hover {
-  background: #f1f5f9;
-  color: var(--nexus-heading);
+  background: rgba(37, 99, 201, 0.04);
+  color: var(--nexus-text-strong);
 }
 
 .menu__link--active {
-  background: #eff6ff !important;
-  color: #2563eb !important;
+  background: var(--nexus-accent-soft) !important;
+  color: var(--ifm-color-primary) !important;
   font-weight: 500;
+  border-left: 2px solid var(--nexus-accent);
+  border-radius: 0 6px 6px 0;
+  padding-left: 10px;
 }
 
 [data-theme='dark'] .menu__link {
@@ -773,36 +776,43 @@ tbody td {
 
 /* ── BREADCRUMBS ── */
 .breadcrumbs__link {
-  font-size: 0.8rem;
+  font-size: 13px;
   font-weight: 400;
-  color: var(--nexus-text-muted);
-  transition: color 0.15s;
+  color: var(--nexus-text-secondary);
+  background: transparent;
+  padding: 4px 8px;
+  transition: all 0.15s;
 }
 
 .breadcrumbs__link:hover {
-  color: var(--nexus-heading);
+  background: var(--nexus-accent-soft);
+  color: var(--ifm-color-primary);
 }
 
 .breadcrumbs__item--active .breadcrumbs__link {
-  color: var(--nexus-heading);
+  color: var(--nexus-text-strong);
+  background: transparent;
   font-weight: 500;
 }
 
 /* ── TOC (tabla de contenidos) ── */
 .table-of-contents__link {
-  font-size: 0.82rem;
+  font-size: 13px;
   font-weight: 400;
-  color: var(--nexus-text-muted);
+  color: var(--nexus-text-secondary);
+  line-height: 1.6;
   transition: color 0.15s;
 }
 
 .table-of-contents__link:hover {
-  color: var(--nexus-heading);
+  color: var(--nexus-text-strong);
 }
 
 .table-of-contents__link--active {
-  color: var(--nexus-blue) !important;
+  color: var(--ifm-color-primary) !important;
   font-weight: 500;
+  border-left: 2px solid var(--nexus-accent);
+  padding-left: 12px;
 }
 
 [data-theme='dark'] .table-of-contents__link {
