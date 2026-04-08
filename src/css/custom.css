@@ -203,35 +203,60 @@
 
 /* ── CONTENIDO ── */
 .markdown {
-  font-size: 0.95rem;
-  line-height: 1.75;
-  color: var(--nexus-text);
+  font-size: 16px;
+  line-height: 1.78;
+  color: var(--ifm-font-color-base);
   font-weight: 400;
+  letter-spacing: -0.003em;
+}
+
+.markdown p {
+  margin-bottom: 1.25em;
 }
 
 .markdown h1 {
-  font-size: 1.9rem;
-  font-weight: 600;
-  color: var(--nexus-heading);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--nexus-text-strong);
   border-bottom: 1px solid var(--nexus-border);
-  padding-bottom: 0.6rem;
-  margin-bottom: 1.5rem;
-  letter-spacing: -0.01em;
+  padding-bottom: 0.5em;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
 }
 
 .markdown h2 {
-  font-size: 1.25rem;
+  font-size: 22px;
   font-weight: 600;
-  color: var(--nexus-heading);
-  margin-top: 2.5rem;
-  letter-spacing: 0;
+  color: var(--nexus-text-strong);
+  margin-top: 2.5em;
+  margin-bottom: 0.75em;
+  padding-bottom: 0.4em;
+  border-bottom: 1px solid var(--nexus-border);
+  letter-spacing: -0.01em;
+  line-height: 1.3;
 }
 
 .markdown h3 {
-  font-size: 1.05rem;
-  font-weight: 500;
-  color: var(--nexus-heading);
-  margin-top: 1.8rem;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--nexus-text-strong);
+  margin-top: 2em;
+  margin-bottom: 0.6em;
+}
+
+.markdown h4 {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--nexus-text-strong);
+  margin-top: 1.5em;
+}
+
+/* ── SELECCIÓN DE TEXTO ── */
+[data-theme='light'] ::selection {
+  background: rgba(37, 99, 201, 0.18);
+  color: var(--nexus-text-strong);
 }
 
 /* ── CÓDIGO ── */
