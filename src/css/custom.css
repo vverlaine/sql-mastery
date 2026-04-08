@@ -204,9 +204,36 @@
 
 /* ── CÓDIGO ── */
 .prism-code {
-  border-radius: 10px;
+  border-radius: 12px;
   font-size: 0.85rem;
   border: 1px solid rgba(0,0,0,0.06);
+}
+
+[data-theme='dark'] .prism-code {
+  background: #040917 !important;
+  border: 1px solid var(--nexus-border);
+  border-radius: 12px;
+}
+
+[data-theme='dark'] [class*="codeBlockTitle"] {
+  background: rgba(255,255,255,0.03) !important;
+  color: var(--nexus-text-muted) !important;
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--nexus-border);
+}
+
+[data-theme='dark'] [class*="copyButton"] {
+  background: transparent !important;
+  border: none !important;
+  opacity: 0.4;
+  transition: opacity 0.2s;
+}
+
+[data-theme='dark'] [class*="copyButton"]:hover {
+  background: rgba(255,255,255,0.05) !important;
+  opacity: 1;
 }
 
 code {
@@ -217,9 +244,13 @@ code {
   font-size: 0.85em;
 }
 
-[data-theme='dark'] code {
-  background: rgba(96,165,250,0.12);
-  color: #93c5fd;
+[data-theme='dark'] code:not([class*="language-"]) {
+  background: rgba(107, 155, 255, 0.1);
+  color: #a8c5ff;
+  border: 1px solid rgba(107, 155, 255, 0.18);
+  border-radius: 6px;
+  padding: 2px 6px;
+  font-size: 0.875em;
 }
 
 /* ── TABLAS ── */
