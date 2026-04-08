@@ -66,8 +66,10 @@
 
 /* ── NAVBAR ── */
 .navbar {
-  background: #060d1f;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
+  background: rgba(6, 13, 31, 0.75);
+  backdrop-filter: saturate(180%) blur(16px);
+  -webkit-backdrop-filter: saturate(180%) blur(16px);
+  border-bottom: 1px solid var(--nexus-border);
   box-shadow: none;
   height: 60px;
 }
@@ -81,7 +83,7 @@
 .navbar__title {
   font-weight: 600;
   font-size: 1rem;
-  color: #ffffff;
+  color: #e6eaf2;
   letter-spacing: 0.02em;
 }
 
@@ -90,15 +92,18 @@
 }
 
 .navbar__link {
-  color: rgba(255,255,255,0.65) !important;
+  color: var(--nexus-text-secondary, #a8b2c8) !important;
   font-size: 0.875rem;
   font-weight: 400;
   transition: color 0.2s;
 }
 
-.navbar__link:hover,
+.navbar__link:hover {
+  color: #e6eaf2 !important;
+}
+
 .navbar__link--active {
-  color: #ffffff !important;
+  color: var(--nexus-accent, #6b9bff) !important;
 }
 
 [data-theme='light'] .navbar__link {
