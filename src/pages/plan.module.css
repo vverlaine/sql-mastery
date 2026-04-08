@@ -1,5 +1,5 @@
 .container {
-  background: var(--ifm-background-color, #fbfaf7);
+  background: linear-gradient(180deg, var(--ifm-background-color, #fbfaf7) 0%, #e8eefb 100%);
   min-height: 100vh;
   padding: 80px 40px;
   max-width: 1080px;
@@ -145,15 +145,14 @@
   margin-bottom: 16px;
 }
 
-/* Número: marca de agua decorativa */
+/* Número: marca de agua decorativa con color del pilar */
 .cardNumber {
   position: absolute;
   top: 12px;
   right: 24px;
   font-size: 88px;
   font-weight: 800;
-  color: var(--nexus-border, #ebe7dd) !important;
-  opacity: 1;
+  opacity: 0.1;
   line-height: 1;
   pointer-events: none;
   z-index: 0;
@@ -230,10 +229,8 @@
   font-weight: 500;
   padding: 3px 10px;
   border-radius: 100px;
-  border: 1px solid var(--nexus-border, #ebe7dd);
+  border: 1px solid;
   letter-spacing: 0.02em;
-  background: var(--nexus-bg-sidebar, #f6f4ef);
-  color: var(--nexus-text-secondary, #5a5f6b);
   position: relative;
   z-index: 1;
 }
@@ -263,15 +260,13 @@
   border: none;
   align-self: flex-start;
   letter-spacing: 0.02em;
-  color: var(--nexus-accent, #2563c9) !important;
   position: relative;
   z-index: 1;
 }
 
 .cardCta:hover {
-  opacity: 1;
+  opacity: 0.8;
   transform: translateX(4px);
-  color: var(--ifm-color-primary, #1a4fa3) !important;
 }
 
 /* CTA en dark: link inline, sin borde */
