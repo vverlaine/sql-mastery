@@ -53,27 +53,41 @@
 }
 
 [data-theme='light'] .navbar {
-  background: #0345AA;
-  border-bottom: none;
+  background: #ffffff;
+  border-bottom: 1px solid var(--nexus-border);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
 }
 
 .navbar__title {
-  font-weight: 300;
+  font-weight: 600;
   font-size: 1rem;
   color: #ffffff;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.02em;
+}
+
+[data-theme='light'] .navbar__title {
+  color: var(--nexus-heading);
 }
 
 .navbar__link {
   color: rgba(255,255,255,0.65) !important;
   font-size: 0.875rem;
-  font-weight: 300;
+  font-weight: 400;
   transition: color 0.2s;
 }
 
 .navbar__link:hover,
 .navbar__link--active {
   color: #ffffff !important;
+}
+
+[data-theme='light'] .navbar__link {
+  color: var(--nexus-text-muted) !important;
+}
+
+[data-theme='light'] .navbar__link:hover,
+[data-theme='light'] .navbar__link--active {
+  color: var(--nexus-heading) !important;
 }
 
 /* ── SIDEBAR ── */
@@ -456,23 +470,36 @@ tbody td {
 
 /* ── TOGGLE TEMA ── */
 [data-theme='light'] .navbar__items--right .clean-btn {
-  color: #ffffff !important;
+  color: var(--nexus-text-muted) !important;
 }
 
 [data-theme='light'] .navbar__items--right .clean-btn svg {
-  fill: #ffffff !important;
-  stroke: #ffffff !important;
-}
-
-[data-theme='light'] .colorModeToggle_DEke button {
-  color: #ffffff !important;
+  fill: var(--nexus-text-muted) !important;
+  stroke: var(--nexus-text-muted) !important;
 }
 
 [data-theme='light'] [class*="colorModeToggle"] button {
-  color: #ffffff !important;
+  color: var(--nexus-text-muted) !important;
 }
 
 [data-theme='light'] [class*="colorModeToggle"] svg {
-  color: #ffffff !important;
-  fill: #ffffff !important;
+  color: var(--nexus-text-muted) !important;
+  fill: var(--nexus-text-muted) !important;
+}
+
+/* ── DROPDOWN (light) ── */
+[data-theme='light'] .dropdown__menu {
+  background: #ffffff;
+  border: 1px solid var(--nexus-border);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  border-radius: 8px;
+}
+
+[data-theme='light'] .dropdown__link {
+  color: var(--nexus-text) !important;
+}
+
+[data-theme='light'] .dropdown__link:hover {
+  background: #f8fafc;
+  color: var(--nexus-heading) !important;
 }
