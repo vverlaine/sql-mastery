@@ -1,35 +1,55 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --ifm-color-primary: #2563eb;
-  --ifm-color-primary-dark: #1d4ed8;
-  --ifm-color-primary-darker: #1e40af;
-  --ifm-color-primary-darkest: #1e3a8a;
-  --ifm-color-primary-light: #3b82f6;
-  --ifm-color-primary-lighter: #60a5fa;
-  --ifm-color-primary-lightest: #93c5fd;
+  /* === Fondos: off-white cálidos, NO azulados === */
+  --ifm-background-color: #fbfaf7;
+  --nexus-bg-elevated: #ffffff;
+  --nexus-bg-sidebar: #f6f4ef;
+  --nexus-bg-toc: #fbfaf7;
+  --nexus-bg-subtle: #f3f1ec;
+  --nexus-bg-code-inline: #f1ede4;
+
+  /* === Texto: grises cálidos, NO negros === */
+  --ifm-font-color-base: #2a2d35;
+  --nexus-text-strong: #1a1c22;
+  --nexus-text-secondary: #5a5f6b;
+  --nexus-text-muted: #8a8f9b;
+
+  /* === Acentos: azul CBC desaturado === */
+  --ifm-color-primary: #1a4fa3;
+  --ifm-color-primary-dark: #143d80;
+  --ifm-color-primary-darker: #103268;
+  --ifm-color-primary-darkest: #0c2550;
+  --ifm-color-primary-light: #2563c9;
+  --ifm-color-primary-lighter: #3b7ae0;
+  --ifm-color-primary-lightest: #6b9bff;
+  --nexus-accent: #2563c9;
+  --nexus-accent-soft: rgba(37, 99, 201, 0.08);
+  --nexus-accent-border: rgba(37, 99, 201, 0.2);
+
+  /* === Bordes: cálidos === */
+  --nexus-border: #ebe7dd;
+  --nexus-border-strong: #ddd8cc;
+
+  /* === Sombras: cálidas === */
+  --nexus-shadow-sm: 0 1px 2px rgba(60, 50, 30, 0.04);
+  --nexus-shadow-md: 0 2px 8px rgba(60, 50, 30, 0.06), 0 1px 2px rgba(60, 50, 30, 0.04);
+  --nexus-shadow-lg: 0 8px 24px rgba(60, 50, 30, 0.08), 0 2px 6px rgba(60, 50, 30, 0.04);
+
+  /* === Tipografía === */
   --ifm-font-family-base: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  --ifm-heading-font-weight: 600;
+  --ifm-heading-font-weight: 700;
   --ifm-font-weight-base: 400;
   --ifm-sidebar-width: 280px;
   --ifm-code-font-size: 90%;
-  --ifm-background-color: #ffffff;
   --ifm-navbar-height: 60px;
-  --nexus-heading: #0a1535;
-  --nexus-text: #334155;
-  --nexus-text-muted: #64748b;
-  --nexus-border: #e2e8f0;
-  --nexus-surface: #f8fafc;
-  --nexus-blue: #2563eb;
-  --nexus-blue-mid: #3b82f6;
-  --nexus-blue-dark: #1e40af;
-  --nexus-blue-bright: #60a5fa;
+
+  /* === Colores de marca (compartidos) === */
   --nexus-gold: #F7AD1A;
   --nexus-orange: #FFA103;
   --nexus-green: #25AF60;
   --nexus-red: #DE5533;
   --nexus-gray: #6B7280;
-  --nexus-cream: #F5EACE;
 }
 
 [data-theme='dark'] {
@@ -75,9 +95,9 @@
 }
 
 [data-theme='light'] .navbar {
-  background: #ffffff;
+  background: var(--nexus-bg-elevated);
   border-bottom: 1px solid var(--nexus-border);
-  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  box-shadow: var(--nexus-shadow-sm);
 }
 
 .navbar__title {
@@ -88,7 +108,7 @@
 }
 
 [data-theme='light'] .navbar__title {
-  color: var(--nexus-heading);
+  color: var(--nexus-text-strong);
 }
 
 .navbar__link {
@@ -112,7 +132,7 @@
 
 [data-theme='light'] .navbar__link:hover,
 [data-theme='light'] .navbar__link--active {
-  color: var(--nexus-heading) !important;
+  color: var(--nexus-text-strong) !important;
 }
 
 /* ── SIDEBAR ── */
@@ -499,15 +519,15 @@ tbody td {
 }
 
 [data-theme='light'] .hero-container {
-  background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 50%, #f8fafc 100%);
+  background: linear-gradient(180deg, #fbfaf7 0%, #f3f1ec 100%);
 }
 
 [data-theme='light'] .hero-container::before {
-  background: radial-gradient(circle, rgba(37,99,235,0.06) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(26,79,163,0.04) 0%, transparent 70%);
 }
 
 [data-theme='light'] .hero-container::after {
-  background: radial-gradient(circle, rgba(59,130,246,0.04) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(37,99,201,0.03) 0%, transparent 70%);
 }
 
 .hero-badge {
@@ -525,9 +545,9 @@ tbody td {
 }
 
 [data-theme='light'] .hero-badge {
-  background: #eff6ff;
-  border-color: #bfdbfe;
-  color: #2563eb;
+  background: var(--nexus-accent-soft);
+  border-color: var(--nexus-accent-border);
+  color: var(--ifm-color-primary);
 }
 
 .hero-title {
@@ -548,11 +568,11 @@ tbody td {
 }
 
 [data-theme='light'] .hero-title {
-  color: #0a1535;
+  color: var(--nexus-text-strong);
 }
 
 [data-theme='light'] .hero-title span {
-  background: linear-gradient(90deg, #2563eb, #3b82f6);
+  background: linear-gradient(135deg, #1a4fa3 0%, #2563c9 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -568,14 +588,14 @@ tbody td {
 }
 
 [data-theme='light'] .hero-subtitle {
-  color: #64748b;
+  color: var(--nexus-text-secondary);
 }
 
 .hero-cta {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: #2563eb;
+  background: var(--ifm-color-primary);
   color: #ffffff !important;
   font-size: 0.88rem;
   font-weight: 600;
@@ -587,9 +607,9 @@ tbody td {
 }
 
 .hero-cta:hover {
-  background: #1d4ed8;
+  background: var(--ifm-color-primary-dark);
   transform: translateY(-1px);
-  box-shadow: 0 8px 30px rgba(37,99,235,0.35);
+  box-shadow: 0 8px 30px rgba(26,79,163,0.3);
 }
 
 .hero-cta-secondary {
@@ -611,11 +631,11 @@ tbody td {
 }
 
 [data-theme='light'] .hero-cta-secondary {
-  color: #64748b !important;
+  color: var(--nexus-text-secondary) !important;
 }
 
 [data-theme='light'] .hero-cta-secondary:hover {
-  color: #0a1535 !important;
+  color: var(--nexus-text-strong) !important;
 }
 
 .hero-buttons {
@@ -635,7 +655,7 @@ tbody td {
 }
 
 [data-theme='light'] .hero-stats {
-  border-top-color: #e2e8f0;
+  border-top-color: var(--nexus-border);
 }
 
 .hero-stat {
@@ -650,7 +670,7 @@ tbody td {
 }
 
 [data-theme='light'] .hero-stat-number {
-  color: #0a1535;
+  color: var(--nexus-text-strong);
 }
 
 .hero-stat-label {
@@ -662,7 +682,7 @@ tbody td {
 }
 
 [data-theme='light'] .hero-stat-label {
-  color: #94a3b8;
+  color: var(--nexus-text-muted);
 }
 
 .hero-pills {
@@ -685,9 +705,9 @@ tbody td {
 }
 
 [data-theme='light'] .hero-pill {
-  background: #ffffff;
-  border-color: #e2e8f0;
-  color: #64748b;
+  background: var(--nexus-bg-elevated);
+  border-color: var(--nexus-border);
+  color: var(--nexus-text-secondary);
 }
 
 /* ── TOGGLE TEMA ── */
@@ -722,8 +742,8 @@ tbody td {
 }
 
 [data-theme='light'] .dropdown__link:hover {
-  background: #f8fafc;
-  color: var(--nexus-heading) !important;
+  background: var(--nexus-bg-subtle);
+  color: var(--nexus-text-strong) !important;
 }
 
 /* ── BREADCRUMBS ── */
