@@ -81,38 +81,32 @@ export default function Plan(): React.JSX.Element {
           </p>
         </div>
 
-        {/* Timeline */}
-        <div className={styles.timeline}>
+        {/* Grid de tarjetas */}
+        <div className={styles.grid}>
           {pilares.map((pilar, index) => (
             <div key={index} className={styles.card}>
-              <div className={styles.cardLeft}>
-                <div className={styles.cardNumber} style={{color: pilar.color}}>
-                  {pilar.number}
-                </div>
-                <div className={styles.cardLine} style={{background: pilar.color}} />
-              </div>
-              <div className={styles.cardContent}>
-                <div className={styles.cardHeader}>
-                  <div>
-                    <div className={styles.cardPeriod} style={{color: pilar.color}}>
-                      {pilar.period} · {pilar.duration}
-                    </div>
-                    <h2 className={styles.cardTitle}>
-                      {pilar.title}
-                    </h2>
+              <div className={styles.cardStripe} style={{background: pilar.color}} />
+              <div className={styles.cardBody}>
+                <div className={styles.cardTop}>
+                  <div className={styles.cardNumber} style={{color: pilar.color}}>
+                    {pilar.number}
                   </div>
-                  <Link to={pilar.link} className={styles.cardCta} style={{borderColor: pilar.color, color: pilar.color}}>
-                    Entrar →
-                  </Link>
+                  <div className={styles.cardPeriod} style={{color: pilar.color}}>
+                    {pilar.period}<br />{pilar.duration}
+                  </div>
                 </div>
+                <h2 className={styles.cardTitle}>{pilar.title}</h2>
                 <p className={styles.cardObjective}>{pilar.objective}</p>
                 <div className={styles.topics}>
                   {pilar.topics.map((topic, i) => (
-                    <span key={i} className={styles.topic} style={{borderColor: `${pilar.color}40`, color: pilar.color, background: `${pilar.color}10`}}>
+                    <span key={i} className={styles.topic} style={{borderColor: `${pilar.color}30`, color: pilar.color, background: `${pilar.color}08`}}>
                       {topic}
                     </span>
                   ))}
                 </div>
+                <Link to={pilar.link} className={styles.cardCta} style={{borderColor: pilar.color, color: pilar.color}}>
+                  Explorar →
+                </Link>
               </div>
             </div>
           ))}
