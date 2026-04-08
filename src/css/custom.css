@@ -264,9 +264,20 @@
 
 /* ── CÓDIGO ── */
 .prism-code {
-  border-radius: 12px;
-  font-size: 0.85rem;
+  border-radius: 10px;
+  font-size: 13.5px;
+  line-height: 1.65;
   border: 1px solid rgba(0,0,0,0.06);
+}
+
+[data-theme='light'] .prism-code {
+  background: var(--nexus-bg-elevated) !important;
+  border: 1px solid var(--nexus-border);
+  box-shadow: var(--nexus-shadow-sm);
+}
+
+[data-theme='light'] pre {
+  padding: 18px 22px;
 }
 
 [data-theme='dark'] .prism-code {
@@ -297,12 +308,21 @@
 }
 
 code {
-  background: #f1f5f9;
-  color: #1e40af;
-  border-radius: 4px;
-  padding: 2px 6px;
-  font-size: 0.85em;
+  background: var(--nexus-bg-code-inline, #f1ede4);
+  color: #8b4513;
+  border: 1px solid var(--nexus-border, #ebe7dd);
+  border-radius: 5px;
+  padding: 1px 6px;
+  font-size: 0.875em;
+  font-weight: 500;
 }
+
+/* Token colors para light mode */
+[data-theme='light'] .token.keyword { color: #af00db; }
+[data-theme='light'] .token.string { color: #0a7d3e; }
+[data-theme='light'] .token.comment { color: #8a8f9b; font-style: italic; }
+[data-theme='light'] .token.function { color: #b35900; }
+[data-theme='light'] .token.number { color: #098658; }
 
 [data-theme='dark'] code:not([class*="language-"]) {
   background: rgba(107, 155, 255, 0.1);
@@ -389,18 +409,18 @@ tbody td {
 }
 
 .admonition-note {
-  border-left-color: #2563eb;
-  background: #eff6ff;
+  border-left-color: var(--ifm-color-primary, #1a4fa3);
+  background: rgba(37, 99, 201, 0.06);
 }
 
 .admonition-warning {
-  border-left-color: #FFA103;
-  background: #fff8ec;
+  border-left-color: #c68a00;
+  background: rgba(198, 138, 0, 0.06);
 }
 
 .admonition-tip {
-  border-left-color: #25AF60;
-  background: #f0fff6;
+  border-left-color: #1d8c4e;
+  background: rgba(29, 140, 78, 0.06);
 }
 
 [data-theme='dark'] .admonition {
@@ -859,12 +879,6 @@ tbody td {
 [data-theme='dark'] [class*="backToTopButton"] svg {
   color: var(--nexus-accent, #6b9bff) !important;
   fill: var(--nexus-accent, #6b9bff) !important;
-}
-
-/* ── ADMONITIONS (light refinements) ── */
-[data-theme='light'] .admonition-note {
-  border-left-color: #2563eb;
-  background: #eff6ff;
 }
 
 /* ── GLOBAL TRANSITIONS ── */
