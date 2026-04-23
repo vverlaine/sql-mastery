@@ -7,7 +7,7 @@ title: Ordenar Datos con ORDER BY
 
 ## ¿Por qué ordenar?
 
-Imagina que recuperas la población de 15 países. Obtienes una lista. Pero, ¿cuál es el más poblado? ¿Cuál el menos? Sin orden, tienes que leerlos todos para saberlo.
+Imagina que recuperas el total de 55,000 ventas. Obtienes una lista. Pero, ¿cuál es la más alta? ¿Cuál la más baja? Sin orden, tendrías que leerlas todas para saberlo.
 
 `ORDER BY` resuelve eso: organiza los resultados según la columna que elijas, ya sea en orden ascendente (de menor a mayor, o de la A a la Z) o descendente.
 
@@ -21,12 +21,12 @@ FROM tabla
 ORDER BY nombre_columna;
 ```
 
-Por ejemplo, para recuperar los continentes ordenados alfabéticamente:
+Por ejemplo, para recuperar los canales ordenados alfabéticamente:
 
 ```sql
-SELECT continent
-FROM country
-ORDER BY continent;
+SELECT canal
+FROM cbc_cas_dev.universidad.fact_ventas
+ORDER BY canal;
 ```
 
 > ⚠️ **Posición importante:** `ORDER BY` siempre va después de `FROM` y antes de `LIMIT` si usas ambas cláusulas.
@@ -39,8 +39,8 @@ Para columnas numéricas, el orden por defecto es ascendente (de menor a mayor).
 
 Ordenar no es solo presentación. En análisis de datos, el orden revela cosas:
 
-- Ordenar ventas de mayor a menor te muestra inmediatamente quiénes son tus mejores clientes.
-- Ordenar fechas te permite ver tendencias temporales.
+- Ordenar ventas por `total` de mayor a menor te muestra inmediatamente cuáles son las transacciones de mayor valor.
+- Ordenar por `fecha_venta` te permite ver tendencias temporales y detectar patrones de estacionalidad.
 - Ordenar por error o excepción (valores nulos al final o al inicio) te ayuda a detectar problemas de calidad.
 
 Un resultado bien ordenado comunica. Uno sin orden obliga al lector a hacer el trabajo que tú debiste hacer.
@@ -49,32 +49,32 @@ Un resultado bien ordenado comunica. Uno sin orden obliga al lector a hacer el t
 
 ## 🎯 Tarea
 
-Escribe una consulta SQL para recuperar la columna `capital` de la tabla `country` y ordenar los resultados alfabéticamente.
+Escribe una consulta SQL para recuperar la columna `id_producto` de la tabla `cbc_cas_dev.universidad.fact_ventas` y ordenar los resultados alfabéticamente.
 
 <details>
 <summary>Ver solución</summary>
 
 ```sql
-SELECT capital
-FROM country
-ORDER BY capital;
+SELECT id_producto
+FROM cbc_cas_dev.universidad.fact_ventas
+ORDER BY id_producto;
 ```
 
 </details>
 
 ---
 
-## Desafío: Ordenación por Población
+## Desafío: Ordenación por Total
 
-Escribe una consulta SQL para recuperar la columna `population` de la tabla `country` y ordenarla en orden ascendente.
+Escribe una consulta SQL para recuperar la columna `total` de la tabla `cbc_cas_dev.universidad.fact_ventas` y ordenarla en orden ascendente.
 
 <details>
 <summary>Ver solución</summary>
 
 ```sql
-SELECT population
-FROM country
-ORDER BY population;
+SELECT total
+FROM cbc_cas_dev.universidad.fact_ventas
+ORDER BY total;
 ```
 
 </details>

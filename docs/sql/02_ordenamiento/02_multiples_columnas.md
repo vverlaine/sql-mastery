@@ -7,7 +7,7 @@ title: Ordenación por Múltiples Columnas
 
 ## Cuando una columna no es suficiente
 
-Ordenar por una sola columna funciona bien hasta que encuentras empates. Si ordenas por continente y varios países comparten el mismo, ¿en qué orden aparecen entre sí? Sin una segunda columna de orden, el resultado es arbitrario.
+Ordenar por una sola columna funciona bien hasta que encuentras empates. Si ordenas por canal y miles de ventas comparten el mismo, ¿en qué orden aparecen entre sí? Sin una segunda columna de orden, el resultado es arbitrario.
 
 La solución es ordenar por múltiples columnas: la primera tiene prioridad, y cuando hay empate, la segunda desempata.
 
@@ -21,15 +21,15 @@ FROM tabla
 ORDER BY columna_prioridad, columna2, ...;
 ```
 
-Por ejemplo, para ordenar primero por población y luego por capital como desempate:
+Por ejemplo, para ordenar primero por canal y luego por total como desempate:
 
 ```sql
-SELECT id, population, capital
-FROM country
-ORDER BY population, capital;
+SELECT id_venta, canal, total
+FROM cbc_cas_dev.universidad.fact_ventas
+ORDER BY canal, total;
 ```
 
-La lógica es: primero agrupa por población. Si dos países tienen la misma población, los ordena alfabéticamente por capital.
+La lógica es: primero agrupa las ventas por canal alfabéticamente (`Directo`, `Distribuidor`, `Online`). Dentro de cada canal, ordena de menor a mayor total.
 
 ---
 
@@ -37,9 +37,9 @@ La lógica es: primero agrupa por población. Si dos países tienen la misma pob
 
 Este patrón es muy común en reportes reales:
 
-- Ordenar por región y luego por nombre del cliente dentro de cada región.
-- Ordenar por mes y luego por monto de venta dentro de cada mes.
-- Ordenar por categoría de producto y luego por precio.
+- Ordenar por canal y luego por total para ver las ventas más pequeñas y más grandes dentro de cada canal.
+- Ordenar por tienda y luego por fecha para ver la secuencia de ventas de cada punto.
+- Ordenar por producto y luego por cantidad para ver los movimientos más representativos por SKU.
 
 Siempre que tengas una jerarquía natural en tus datos, el ordenamiento múltiple la hace visible.
 
@@ -47,15 +47,15 @@ Siempre que tengas una jerarquía natural en tus datos, el ordenamiento múltipl
 
 ## 🎯 Tarea
 
-Escribe una consulta SQL para recuperar las columnas `continent`, `region`, `population` y `capital` (en ese orden). Ordena el resultado primero por `continent` y luego por `population`.
+Escribe una consulta SQL para recuperar las columnas `canal`, `id_tienda`, `total` e `id_venta` (en ese orden). Ordena el resultado primero por `canal` y luego por `total`.
 
 <details>
 <summary>Ver solución</summary>
 
 ```sql
-SELECT continent, region, population, capital
-FROM country
-ORDER BY continent, population;
+SELECT canal, id_tienda, total, id_venta
+FROM cbc_cas_dev.universidad.fact_ventas
+ORDER BY canal, total;
 ```
 
 </details>
@@ -64,15 +64,15 @@ ORDER BY continent, population;
 
 ## Desafío: Doble Ordenamiento
 
-Escribe una consulta SQL para recuperar las columnas `region` y `capital`. Ordena el resultado primero por `region` y luego por `capital`.
+Escribe una consulta SQL para recuperar las columnas `id_tienda` e `id_producto`. Ordena el resultado primero por `id_tienda` y luego por `id_producto`.
 
 <details>
 <summary>Ver solución</summary>
 
 ```sql
-SELECT region, capital
-FROM country
-ORDER BY region, capital;
+SELECT id_tienda, id_producto
+FROM cbc_cas_dev.universidad.fact_ventas
+ORDER BY id_tienda, id_producto;
 ```
 
 </details>
