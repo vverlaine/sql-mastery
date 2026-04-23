@@ -15,12 +15,12 @@ FROM tabla
 WHERE NOT condición;
 ```
 
-Ejemplo — todos los países excepto los asiáticos:
+Ejemplo — todas las ventas excepto las del canal directo:
 
 ```sql
-SELECT name, capital
-FROM country
-WHERE NOT continent = 'Asia';
+SELECT id_venta, canal
+FROM cbc_cas_dev.universidad.fact_ventas
+WHERE NOT canal = 'Directo';
 ```
 
 ---
@@ -30,13 +30,13 @@ WHERE NOT continent = 'Asia';
 `NOT` brilla cuando la lista de lo que quieres incluir es larga, pero lo que quieres excluir es corto. En lugar de escribir:
 
 ```sql
-WHERE continent = 'Europe' OR continent = 'Asia' OR continent = 'Africa' OR continent = 'Oceania'
+WHERE canal = 'Online' OR canal = 'Distribuidor'
 ```
 
 Puedes simplificar con:
 
 ```sql
-WHERE NOT continent = 'North America'
+WHERE NOT canal = 'Directo'
 ```
 
 Si el resultado es el mismo, usa el que sea más claro y menos propenso a errores.
@@ -45,33 +45,33 @@ Si el resultado es el mismo, usa el que sea más claro y menos propenso a errore
 
 ## 🎯 Tarea
 
-Recupera las columnas `name` y `capital` de los países que **no** pertenecen al continente `'South America'`.
+Recupera las columnas `id_venta` y `total` de las ventas que **no** pertenecen al canal `'Distribuidor'`.
 
 <details>
 <summary>Ver solución</summary>
 
 ```sql
-SELECT name, capital
-FROM country
-WHERE NOT continent = 'South America';
+SELECT id_venta, total
+FROM cbc_cas_dev.universidad.fact_ventas
+WHERE NOT canal = 'Distribuidor';
 ```
 
 </details>
 
 ---
 
-## Desafío: Capitales fuera de Europa
+## Desafío: Ventas fuera del canal Online
 
-Recupera `name`, `capital` y `continent` de los países que no pertenecen a `'Europe'`. Ordena el resultado por `capital`.
+Recupera `id_venta`, `total` y `canal` de las ventas que no pertenecen al canal `'Online'`. Ordena el resultado por `total`.
 
 <details>
 <summary>Ver solución</summary>
 
 ```sql
-SELECT name, capital, continent
-FROM country
-WHERE NOT continent = 'Europe'
-ORDER BY capital;
+SELECT id_venta, total, canal
+FROM cbc_cas_dev.universidad.fact_ventas
+WHERE NOT canal = 'Online'
+ORDER BY total;
 ```
 
 </details>
