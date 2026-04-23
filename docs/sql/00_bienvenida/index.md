@@ -36,7 +36,9 @@ Lo que sí necesitas es curiosidad: ganas de hacerle preguntas a los datos y de 
 
 ## La tabla con la que trabajaremos
 
-A lo largo del curso usaremos una tabla llamada `country`, que contiene información geográfica y demográfica de países del mundo. Es simple, familiar y perfecta para aprender — pero los patrones que aprenderás aquí aplican exactamente igual a una tabla de ventas, clientes o transacciones financieras.
+A lo largo del curso usaremos la tabla `cbc_cas_dev.universidad.fact_ventas`, una tabla de hechos con 55,000 transacciones de venta. Cada fila representa una venta individual e incluye identificadores de tienda, cliente, vendedor y producto, además de cantidad, precio, descuento, total y canal.
+
+Es un ejemplo cercano a lo que verás en el día a día: datos reales de negocio, con volumen suficiente para que las consultas importen, y con imperfecciones típicas (valores nulos, variabilidad) que te preparan para el mundo real.
 
 > 💡 **Nota:** Cada vez que aprendas algo nuevo, pregúntate: ¿cómo aplicaría esto a los datos de mi trabajo? Esa conexión es lo que convierte el aprendizaje técnico en habilidad analítica real.
 

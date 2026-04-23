@@ -5,21 +5,26 @@ title: Recuperación de Múltiples Columnas
 
 # Recuperación de Múltiples Columnas
 
-## Conociendo nuestra tabla: `country`
+## Conociendo nuestra tabla: `fact_ventas`
 
 Antes de escribir consultas más complejas, conviene entender con qué datos estamos trabajando. Un buen analista siempre inspecciona su fuente antes de comenzar a analizarla.
 
-La tabla `country` contiene 15 filas — cada una representa un país distinto — y 7 columnas:
+La tabla `cbc_cas_dev.universidad.fact_ventas` contiene 55,000 filas — cada una representa una transacción de venta individual — y 12 columnas:
 
 | Columna | Descripción |
 |---|---|
-| `id` | Identificador único de cada registro |
-| `name` | Nombre del país |
-| `continent` | Continente donde se ubica |
-| `region` | Región específica dentro del continente |
-| `SurfaceArea` | Superficie total en km² |
-| `capital` | Ciudad capital |
-| `population` | Número de habitantes |
+| `id_venta` | Identificador único de la venta (ej. `F-0000001`) |
+| `id_fecha` | Fecha de la venta en formato entero `yyyyMMdd` (ej. `20250916`) |
+| `fecha_venta` | Fecha de la venta en formato `DATE` |
+| `id_tienda` | Identificador de la tienda donde ocurrió la venta |
+| `id_cliente` | Identificador del cliente (puede ser nulo) |
+| `id_vendedor` | Identificador del vendedor (puede ser nulo) |
+| `id_producto` | SKU del producto vendido |
+| `cantidad` | Unidades vendidas en la transacción |
+| `precio_unitario` | Precio por unidad del producto |
+| `descuento` | Monto de descuento aplicado |
+| `total` | Monto total cobrado por la venta |
+| `canal` | Canal de venta: `Directo`, `Distribuidor` u `Online` |
 
 > 💡 **Mentalidad analítica:** Antes de responder cualquier pregunta de negocio, pregúntate: ¿qué columnas son realmente relevantes para lo que quiero analizar? No siempre necesitas todos los datos. Seleccionar solo lo necesario hace tus consultas más eficientes y tus resultados más claros.
 
@@ -36,14 +41,14 @@ SELECT columna1, columna2, columna3
 FROM nombre_tabla;
 ```
 
-Por ejemplo, para ver el nombre de cada país junto con su continente y región:
+Por ejemplo, para ver el identificador de cada venta junto con su canal y la tienda donde ocurrió:
 
 ```sql
-SELECT name, continent, region
-FROM country;
+SELECT id_venta, canal, id_tienda
+FROM cbc_cas_dev.universidad.fact_ventas;
 ```
 
-El resultado mostrará exactamente esas tres columnas para los 15 países, sin información innecesaria.
+El resultado mostrará exactamente esas tres columnas para las 55,000 ventas, sin información innecesaria.
 
 > ⚠️ **Ojo con el orden:** Las columnas aparecen en el resultado en el mismo orden en que las escribes en el `SELECT`. Esto es útil cuando quieres presentar la información de una manera específica para un reporte o dashboard.
 
@@ -51,15 +56,15 @@ El resultado mostrará exactamente esas tres columnas para los 15 países, sin i
 
 ## La diferencia entre datos y contexto
 
-Imagina que solo recuperas la columna `population`. Obtienes una lista de números. ¿Qué significan? No lo sabes.
+Imagina que solo recuperas la columna `total`. Obtienes una lista de números. ¿Qué significan? ¿De qué ventas son? ¿De qué canal? No lo sabes.
 
-Ahora recuperas `name` y `population` juntos. De repente cada número tiene un nombre, un contexto, una historia. Eso es lo que hace un buen analista: no solo extrae datos, construye contexto.
+Ahora recuperas `id_venta`, `canal` y `total` juntos. De repente cada número tiene un identificador, un canal, una historia. Eso es lo que hace un buen analista: no solo extrae datos, construye contexto.
 
 ---
 
 ## 🎯 Tarea
 
-Escribe una consulta SQL para obtener las columnas `continent` y `population` de la tabla `country`.
+Escribe una consulta SQL para obtener las columnas `id_producto` y `cantidad` de la tabla `cbc_cas_dev.universidad.fact_ventas`.
 
 > 💡 Pista: Las columnas deben estar separadas por comas.
 
@@ -67,8 +72,8 @@ Escribe una consulta SQL para obtener las columnas `continent` y `population` de
 <summary>Ver solución</summary>
 
 ```sql
-SELECT continent, population
-FROM country;
+SELECT id_producto, cantidad
+FROM cbc_cas_dev.universidad.fact_ventas;
 ```
 
 </details>

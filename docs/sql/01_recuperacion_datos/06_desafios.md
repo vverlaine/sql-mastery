@@ -11,84 +11,84 @@ Has aprendido los bloques fundamentales: `SELECT`, `FROM`, `DISTINCT` y `LIMIT`.
 
 ---
 
-## Desafío 1 — Población de los países
+## Desafío 1 — Totales de todas las ventas
 
-Recupera todos los valores de población registrados en la tabla. Este es el primer paso para entender la distribución demográfica.
+Recupera todos los valores de `total` registrados en la tabla. Este es el primer paso para entender la distribución de los montos facturados.
 
 <details>
 <summary>Ver solución</summary>
 
 ```sql
-SELECT population
-FROM country;
+SELECT total
+FROM cbc_cas_dev.universidad.fact_ventas;
 ```
 
 </details>
 
 ---
 
-## Desafío 2 — Nombres de todos los países
+## Desafío 2 — Productos vendidos
 
-Recupera los nombres de todos los países. Conocer el universo de registros con el que trabajas es siempre el primer paso de cualquier análisis.
+Recupera el SKU de cada venta. Conocer el universo de productos con el que trabajas es siempre el primer paso de cualquier análisis de surtido.
 
 <details>
 <summary>Ver solución</summary>
 
 ```sql
-SELECT name
-FROM country;
+SELECT id_producto
+FROM cbc_cas_dev.universidad.fact_ventas;
 ```
 
 </details>
 
 ---
 
-## Desafío 3 — Países con sus identificadores
+## Desafío 3 — Ventas con su identificador
 
 :::note Concepto clave: Clave Primaria
-La columna `id` funciona como identificador único de cada registro, también llamado **clave primaria** (primary key). Ningún dos registros pueden compartir el mismo `id`. Esto es fundamental porque te permite cruzar información entre tablas con precisión, sin riesgo de confundir registros que puedan tener nombres similares. Cuando trabajemos con múltiples tablas, entenderás por qué las claves primarias son la columna vertebral de cualquier base de datos relacional.
+La columna `id_venta` funciona como identificador único de cada registro, también llamado **clave primaria** (primary key). Ningún dos registros pueden compartir el mismo `id_venta`. Esto es fundamental porque te permite cruzar información entre tablas con precisión, sin riesgo de confundir registros que puedan tener valores similares. Cuando trabajemos con múltiples tablas, entenderás por qué las claves primarias son la columna vertebral de cualquier base de datos relacional.
 :::
 
-Recupera el identificador y el nombre de cada país. Acostúmbrate a incluir el `id` cuando explores datos: te ayudará a referenciar registros específicos con exactitud.
+Recupera el identificador y el producto de cada venta. Acostúmbrate a incluir el `id_venta` cuando explores datos: te ayudará a referenciar transacciones específicas con exactitud.
 
 <details>
 <summary>Ver solución</summary>
 
 ```sql
-SELECT id, name
-FROM country;
+SELECT id_venta, id_producto
+FROM cbc_cas_dev.universidad.fact_ventas;
 ```
 
 </details>
 
 ---
 
-## Desafío 4 — Capitales únicas
+## Desafío 4 — Tiendas únicas
 
-Recupera los valores únicos de la columna `capital`. En una tabla bien estructurada cada país tiene una capital diferente, pero en bases de datos reales es común encontrar duplicados o inconsistencias. `DISTINCT` es un buen hábito de validación.
+Recupera los valores únicos de la columna `id_tienda`. En una tabla de ventas cada transacción está asociada a una tienda, pero varias ventas ocurren en la misma tienda. `DISTINCT` te permite ver cuántas tiendas distintas aparecen en tus datos.
 
 <details>
 <summary>Ver solución</summary>
 
 ```sql
-SELECT DISTINCT capital
-FROM country;
+SELECT DISTINCT id_tienda
+FROM cbc_cas_dev.universidad.fact_ventas;
 ```
 
 </details>
 
 ---
 
-## Desafío 5 — Muestra de regiones
+## Desafío 5 — Muestra de productos
 
-Recupera 4 valores únicos de la columna `region`. Este tipo de consulta es útil cuando quieres hacerte una idea rápida de cómo están categorizados los datos sin ver la lista completa.
+Recupera 4 valores únicos de la columna `id_producto`. Este tipo de consulta es útil cuando quieres hacerte una idea rápida de cómo están categorizados los datos sin ver la lista completa.
 
 <details>
 <summary>Ver solución</summary>
 
 ```sql
-SELECT DISTINCT region
-FROM country
+SELECT DISTINCT id_producto
+FROM cbc_cas_dev.universidad.fact_ventas
 LIMIT 4;
 ```
 

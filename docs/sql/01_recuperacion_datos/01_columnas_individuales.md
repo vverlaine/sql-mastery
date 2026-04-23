@@ -35,14 +35,14 @@ FROM nombre_tabla;
 
 ### Ejemplo
 
-Para consultar el continente de cada país en nuestra tabla:
+Para consultar el canal de venta de cada transacción en nuestra tabla:
 
 ```sql
-SELECT continent
-FROM country;
+SELECT canal
+FROM cbc_cas_dev.universidad.fact_ventas;
 ```
 
-Esta consulta le dice al motor de base de datos: *"Dame todos los valores de la columna `continent` de la tabla `country`."* El resultado es una lista con el continente de cada fila registrada.
+Esta consulta le dice al motor de base de datos: *"Dame todos los valores de la columna `canal` de la tabla `fact_ventas`."* El resultado es una lista con el canal de cada venta registrada.
 
 > ⚠️ **Buena práctica:** Escribe siempre las palabras clave de SQL (`SELECT`, `FROM`, `WHERE`, etc.) en mayúsculas. No es obligatorio técnicamente, pero hace tu código mucho más legible para ti y para cualquier persona que lo revise después.
 
@@ -58,14 +58,14 @@ Un analista que sabe hacer esta pregunta de forma precisa ahorra tiempo, evita e
 
 ## 🎯 Tarea
 
-Escribe una consulta SQL para recuperar la columna `capital` de la tabla `country`.
+Escribe una consulta SQL para recuperar la columna `total` de la tabla `cbc_cas_dev.universidad.fact_ventas`.
 
 <details>
 <summary>Ver solución</summary>
 
 ```sql
-SELECT capital
-FROM country;
+SELECT total
+FROM cbc_cas_dev.universidad.fact_ventas;
 ```
 
 </details>

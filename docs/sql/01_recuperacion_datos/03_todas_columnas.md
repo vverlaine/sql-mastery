@@ -18,10 +18,10 @@ En nuestro caso:
 
 ```sql
 SELECT *
-FROM country;
+FROM cbc_cas_dev.universidad.fact_ventas;
 ```
 
-Esto devuelve las 7 columnas completas (`id`, `name`, `continent`, `region`, `SurfaceArea`, `capital`, `population`) para los 15 países.
+Esto devuelve las 12 columnas completas (`id_venta`, `id_fecha`, `fecha_venta`, `id_tienda`, `id_cliente`, `id_vendedor`, `id_producto`, `cantidad`, `precio_unitario`, `descuento`, `total`, `canal`) para las 55,000 ventas.
 
 ---
 
@@ -45,14 +45,14 @@ Aquí viene una distinción que separa a un analista cuidadoso de uno descuidado
 
 ## 🎯 Tarea
 
-Escribe una consulta SQL para recuperar todas las columnas de la tabla `country`.
+Escribe una consulta SQL para recuperar todas las columnas de la tabla `cbc_cas_dev.universidad.fact_ventas`.
 
 <details>
 <summary>Ver solución</summary>
 
 ```sql
 SELECT *
-FROM country;
+FROM cbc_cas_dev.universidad.fact_ventas;
 ```
 
 </details>
