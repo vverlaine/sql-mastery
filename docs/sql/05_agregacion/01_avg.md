@@ -10,11 +10,11 @@ title: AVG — Promedio
 `AVG()` calcula el valor promedio de una columna numérica. Es una de las funciones más usadas en análisis porque resume la tendencia central de un conjunto de datos.
 
 ```sql
-SELECT AVG(population)
-FROM country;
+SELECT AVG(total)
+FROM cbc_cas_dev.universidad.fact_ventas;
 ```
 
-Este resultado te da la población promedio de los países en la tabla.
+Este resultado te da el ticket promedio de todas las ventas en la tabla.
 
 ---
 
@@ -23,12 +23,12 @@ Este resultado te da la población promedio de los países en la tabla.
 Puedes combinar `AVG()` con `WHERE` para calcular el promedio de un subconjunto específico:
 
 ```sql
-SELECT AVG(population)
-FROM country
-WHERE population < 4478500;
+SELECT AVG(total)
+FROM cbc_cas_dev.universidad.fact_ventas
+WHERE canal = 'Online';
 ```
 
-Esto calcula el promedio solo de los países con población menor a 4,478,500 — útil cuando quieres el promedio de un segmento, no de toda la tabla.
+Esto calcula el ticket promedio solo de las ventas online — útil cuando quieres el promedio de un segmento, no de toda la tabla.
 
 ---
 
@@ -36,9 +36,9 @@ Esto calcula el promedio solo de los países con población menor a 4,478,500 �
 
 `AVG()` es poderoso pero puede engañar. Un promedio alto puede ser empujado por un solo valor extremo. Antes de presentar un promedio, pregúntate:
 
-- ¿Hay valores atípicos que distorsionen el resultado?
-- ¿El promedio representa bien a la mayoría, o hay mucha dispersión?
-- ¿Sería más útil calcular el promedio por segmento (con GROUP BY) en lugar de para todos?
+- ¿Hay valores atípicos que distorsionen el resultado? (una venta con cantidad de 24 unidades puede jalar el promedio arriba)
+- ¿El promedio representa bien a la mayoría, o hay mucha dispersión entre canales?
+- ¿Sería más útil calcular el promedio por segmento (con GROUP BY) en lugar de para toda la tabla?
 
 > 💡 Un promedio sin contexto puede ser tan engañoso como no tener el dato. Siempre acompáñalo de información sobre la distribución.
 
@@ -46,14 +46,14 @@ Esto calcula el promedio solo de los países con población menor a 4,478,500 �
 
 ## 🎯 Tarea
 
-Escribe una consulta SQL para obtener el valor promedio de la columna `SurfaceArea` de la tabla `country`.
+Escribe una consulta SQL para obtener el valor promedio de la columna `total` de la tabla `cbc_cas_dev.universidad.fact_ventas`.
 
 <details>
 <summary>Ver solución</summary>
 
 ```sql
-SELECT AVG(SurfaceArea)
-FROM country;
+SELECT AVG(total)
+FROM cbc_cas_dev.universidad.fact_ventas;
 ```
 
 </details>
@@ -62,15 +62,15 @@ FROM country;
 
 ## Desafío
 
-Obtén el promedio de `SurfaceArea` solo para los países cuya superficie sea mayor a 1,000,000 km².
+Obtén el promedio de `total` solo para las ventas cuyo total sea mayor a 10.
 
 <details>
 <summary>Ver solución</summary>
 
 ```sql
-SELECT AVG(SurfaceArea)
-FROM country
-WHERE SurfaceArea > 1000000;
+SELECT AVG(total)
+FROM cbc_cas_dev.universidad.fact_ventas
+WHERE total > 10;
 ```
 
 </details>
