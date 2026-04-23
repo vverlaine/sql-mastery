@@ -24,28 +24,28 @@ La igualdad (`=`) es solo uno de los operadores disponibles en `WHERE`. SQL ofre
 
 ## Ejemplos en acción
 
-**Menor que:** Países con población menor a 2,424,200:
+**Menor que:** Ventas con total menor a 5:
 
 ```sql
-SELECT name, population
-FROM country
-WHERE population < 2424200;
+SELECT id_venta, total
+FROM cbc_cas_dev.universidad.fact_ventas
+WHERE total < 5;
 ```
 
 **Menor o igual que:**
 
 ```sql
-SELECT name, population
-FROM country
-WHERE population <= 2424200;
+SELECT id_venta, total
+FROM cbc_cas_dev.universidad.fact_ventas
+WHERE total <= 5;
 ```
 
-**Distinto de:** Países que no son asiáticos:
+**Distinto de:** Ventas que no son del canal directo:
 
 ```sql
-SELECT name, continent
-FROM country
-WHERE continent <> 'Asia';
+SELECT id_venta, canal
+FROM cbc_cas_dev.universidad.fact_ventas
+WHERE canal <> 'Directo';
 ```
 
 ---
@@ -60,12 +60,12 @@ FROM tabla
 WHERE columna BETWEEN valor_inicial AND valor_final;
 ```
 
-Ejemplo — países con población entre 100,000 y 3,000,000:
+Ejemplo — ventas con total entre 10 y 30:
 
 ```sql
-SELECT name, population
-FROM country
-WHERE population BETWEEN 100000 AND 3000000;
+SELECT id_venta, total
+FROM cbc_cas_dev.universidad.fact_ventas
+WHERE total BETWEEN 10 AND 30;
 ```
 
 `BETWEEN` es inclusivo: incluye los valores del límite inferior y superior.
@@ -82,69 +82,69 @@ FROM tabla
 WHERE nombre_columna IS NULL;
 ```
 
-Ejemplo:
+Ejemplo — ventas que no tienen cliente registrado:
 
 ```sql
-SELECT name
-FROM country
-WHERE region IS NULL;
+SELECT id_venta, total
+FROM cbc_cas_dev.universidad.fact_ventas
+WHERE id_cliente IS NULL;
 ```
 
-> 💡 **Por qué importa:** Los valores NULL son una fuente frecuente de errores en análisis. Si no los identificas y manejas antes de calcular promedios, sumas o conteos, tus resultados pueden ser incorrectos sin que lo notes.
+> 💡 **Por qué importa:** Los valores NULL son una fuente frecuente de errores en análisis. En `fact_ventas` hay ventas sin `id_cliente` y sin `id_vendedor` — si no los identificas antes de calcular promedios, sumas o conteos, tus resultados pueden ser incorrectos sin que lo notes.
 
 ---
 
 ## 🎯 Tareas
 
-**Tarea 1:** Recupera `name`, `population`, `region` y `capital`, solo para países de la región `'Southern Europe'`.
+**Tarea 1:** Recupera `id_venta`, `total`, `canal` e `id_producto`, solo para ventas del canal `'Distribuidor'`.
 
 <details>
 <summary>Ver solución</summary>
 
 ```sql
-SELECT name, population, region, capital
-FROM country
-WHERE region = 'Southern Europe';
+SELECT id_venta, total, canal, id_producto
+FROM cbc_cas_dev.universidad.fact_ventas
+WHERE canal = 'Distribuidor';
 ```
 
 </details>
 
-**Tarea 2:** Recupera `name`, `population`, `region` y `capital`, solo para países con población mayor o igual a 300,000.
+**Tarea 2:** Recupera `id_venta`, `total`, `canal` e `id_producto`, solo para ventas con total mayor o igual a 20.
 
 <details>
 <summary>Ver solución</summary>
 
 ```sql
-SELECT name, population, region, capital
-FROM country
-WHERE population >= 300000;
+SELECT id_venta, total, canal, id_producto
+FROM cbc_cas_dev.universidad.fact_ventas
+WHERE total >= 20;
 ```
 
 </details>
 
-**Tarea 3:** Recupera `name`, `capital` y `population`, para países con población entre 6,000,000 y 80,000,000. Ordena por `capital` de la A a la Z.
+**Tarea 3:** Recupera `id_venta`, `id_producto` y `total`, para ventas con total entre 5 y 15. Ordena por `id_producto` de la A a la Z.
 
 <details>
 <summary>Ver solución</summary>
 
 ```sql
-SELECT name, capital, population
-FROM country
-WHERE population BETWEEN 6000000 AND 80000000
-ORDER BY capital ASC;
+SELECT id_venta, id_producto, total
+FROM cbc_cas_dev.universidad.fact_ventas
+WHERE total BETWEEN 5 AND 15
+ORDER BY id_producto ASC;
 ```
 
 </details>
 
-**Tarea 4:** Recupera `name` y `capital` de los países que no tienen valor en la columna `population`.
+**Tarea 4:** Recupera `id_venta` e `id_producto` de las ventas que no tienen vendedor registrado.
 
 <details>
 <summary>Ver solución</summary>
 
 ```sql
-SELECT name, capital
-FROM country
-WHERE population IS NULL;
+SELECT id_venta, id_producto
+FROM cbc_cas_dev.universidad.fact_ventas
+WHERE id_vendedor IS NULL;
 ```
 
 </details>
