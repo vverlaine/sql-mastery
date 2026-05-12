@@ -81,9 +81,9 @@ Un modelo estrella tiene solo 2 tipos de tablas:
 
 | producto_id | nombre | categoria | marca | presentacion | precio_sugerido |
 |---|---|---|---|---|---|
-| P001 | Coca-Cola 600ml | Bebidas | Coca-Cola | Botella | 1500 |
-| P002 | Coca-Cola 1.5L | Bebidas | Coca-Cola | Botella | 3200 |
-| P234 | Pepsi 500ml | Bebidas | PepsiCo | Botella | 1400 |
+| P001 | Pepsi 600ml | Bebidas | Pepsi | Botella | 1500 |
+| P002 | 7Up 1.5L | Bebidas | 7Up | Botella | 3200 |
+| P234 | Gatorade 500ml | Hidratantes | Gatorade | Botella | 1400 |
 | ... | ... | ... | ... | ... | ... |
 
 **Ejemplo: `dim_tiendas`**
@@ -124,7 +124,7 @@ graph TB
 
 | Problema | Explicación |
 |---|---|
-| 🔄 **Redundancia** | "Coca-Cola 600ml" se repite millones de veces |
+| 🔄 **Redundancia** | "Pepsi 600ml" se repite millones de veces |
 | 📦 **Tamaño** | El archivo puede crecer 5-10x innecesariamente |
 | 🐢 **Velocidad** | VertiPaq comprime mal columnas con mucha variedad |
 | 🔧 **Mantenimiento** | Si cambia el nombre de un producto, hay que actualizar millones de filas |
@@ -160,7 +160,7 @@ graph LR
     style P fill:#4088D2,color:#fff
 ```
 
-En `fact_ventas` solo tienes `producto_id = P001`. Cuando Power BI necesita saber el nombre del producto, busca ese ID en `dim_productos` y trae `"Coca-Cola 600ml"`.
+En `fact_ventas` solo tienes `producto_id = P001`. Cuando Power BI necesita saber el nombre del producto, busca ese ID en `dim_productos` y trae `"Pepsi 600ml"`.
 
 **Ventaja:** `fact_ventas` solo guarda un código corto (P001), no el nombre completo. Millones de veces. Ahorro enorme.
 
@@ -329,10 +329,10 @@ graph TB
 | Columna | Tipo | Ejemplo |
 |---|---|---|
 | producto_id | Text | P001 |
-| nombre | Text | Coca-Cola 600ml |
+| nombre | Text | Pepsi 600ml |
 | categoria | Text | Bebidas |
 | subcategoria | Text | Gaseosas |
-| marca | Text | Coca-Cola |
+| marca | Text | Pepsi |
 | presentacion | Text | Botella |
 | proveedor | Text | Embotelladora SA |
 

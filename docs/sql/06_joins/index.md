@@ -11,7 +11,7 @@ title: JOINs — Conectando el Mundo
 
 ## ¿Por qué necesitamos los JOINs?
 
-Una base de datos bien diseñada **no repite información**. En lugar de escribir "Pilsener 350ml Botella" en cada una de las 200,000 filas de ventas, guardamos solo `SKU-0001` y dejamos que `dim_producto` tenga el nombre completo. Eso ahorra espacio, evita inconsistencias y hace que los datos sean confiables.
+Una base de datos bien diseñada **no repite información**. En lugar de escribir "Pepsi 600ml Botella" en cada una de las 200,000 filas de ventas, guardamos solo `SKU-0001` y dejamos que `dim_producto` tenga el nombre completo. Eso ahorra espacio, evita inconsistencias y hace que los datos sean confiables.
 
 El problema: cuando necesitás analizar, necesitás toda la información junta.
 

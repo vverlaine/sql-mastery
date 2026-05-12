@@ -71,7 +71,7 @@ Un diccionario es como una lista, pero en lugar de usar índices numéricos, cad
 ```python
 producto = {
     "id": 42,
-    "nombre": "Coca-Cola 600ml",
+    "nombre": "Pepsi 600ml",
     "categoria": "Bebidas",
     "precio": 12.50,
     "stock": 1500
@@ -81,7 +81,7 @@ producto = {
 Acceder a un valor del diccionario es directo: usas la clave entre corchetes.
 
 ```python
-print(producto["nombre"])    # "Coca-Cola 600ml"
+print(producto["nombre"])    # "Pepsi 600ml"
 print(producto["precio"])    # 12.50
 print(producto["stock"])     # 1500
 ```

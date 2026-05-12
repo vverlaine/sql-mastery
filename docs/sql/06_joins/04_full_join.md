@@ -59,7 +59,7 @@ ORDER BY total_ventas DESC;
 
 | id_en_catalogo | nombre_producto | id_en_ventas | total_ventas | Diagnóstico |
 |----------------|-----------------|--------------|--------------|-------------|
-| SKU-0001 | Pilsener 350ml | SKU-0001 | 4,280 | ✅ Todo bien |
+| SKU-0001 | Pepsi 600ml | SKU-0001 | 4,280 | ✅ Todo bien |
 | SKU-0015 | Producto Nuevo | `NULL` | 0 | ⚠️ Producto sin ventas |
 | `NULL` | `NULL` | SKU-9999 | 12 | 🔴 SKU fantasma en ventas |
 
