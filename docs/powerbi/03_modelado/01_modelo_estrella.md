@@ -82,7 +82,7 @@ Un modelo estrella tiene solo 2 tipos de tablas:
 | producto_id | nombre | categoria | marca | presentacion | precio_sugerido |
 |---|---|---|---|---|---|
 | P001 | Pepsi 600ml | Bebidas | Pepsi | Botella | 1500 |
-| P002 | 7Up 1.5L | Bebidas | 7Up | Botella | 3200 |
+| P002 | Lipton Té 1.5L | Bebidas | Lipton | Botella | 3200 |
 | P234 | Gatorade 500ml | Hidratantes | Gatorade | Botella | 1400 |
 | ... | ... | ... | ... | ... | ... |
 
